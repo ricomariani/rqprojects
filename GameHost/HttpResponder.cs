@@ -72,7 +72,6 @@ namespace GameHost
             listener.Prefixes.Add("http://*:80/notes/");
             listener.Prefixes.Add("http://*:80/who/");
             listener.Prefixes.Add("http://*:80/bot/");
-            listener.Prefixes.Add("http://sheet.greyminstrel.com:80/");
 
             try
             {
