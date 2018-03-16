@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="GameAid.HeaderStrip"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+    d:DesignHeight="30" d:DesignWidth="600">
+    <Grid Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Margin="5,0,0,2" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+        <TextBlock Grid.Column="1" Margin="5,0,0,0" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+        <TextBlock Grid.Column="2" Margin="5,0,0,0" VerticalAlignment="Center" FontWeight="Bold">Skill</TextBlock>
+        <TextBlock Grid.Column="3" Margin="5,0,0,0" VerticalAlignment="Center" FontWeight="Bold">Type</TextBlock>
+        <TextBlock Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center" FontWeight="Bold">Roll</TextBlock>
+        <TextBlock Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center" FontWeight="Bold">Damage</TextBlock>
+        <TextBlock Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center" FontWeight="Bold">Special</TextBlock>
+        <TextBlock Grid.Column="7" Margin="5,0,0,0" VerticalAlignment="Center" FontWeight="Bold">Target</TextBlock>
+        <TextBlock Grid.Column="8" Margin="5,0,0,0" VerticalAlignment="Center" FontWeight="Bold">Location</TextBlock>
+        <TextBlock Grid.Column="9" Margin="5,0,0,0" VerticalAlignment="Center" FontWeight="Bold">Roll</TextBlock>
+        <TextBlock Grid.Column="10" Margin="5,0,0,0" VerticalAlignment="Center" FontWeight="Bold">Note</TextBlock>
+    </Grid>
+</UserControl>    

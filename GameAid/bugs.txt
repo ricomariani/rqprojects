@@ -1,0 +1,255 @@
+// Copyright (c) 2007-2018 Rico Mariani
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+FIXED: ID:1 ForumToWiki needs some usage notes badly, all 20 original TFS bugs now fixed 12/22/2014
+FIXED: ID:2 need to support color in the sheet scraper so that rune levels get extra bonus
+FIXED: ID:3 the path extension mechanism is terrible, I need something more interactive so you can extend easily and see where new nodes will go
+FIXED: ID:4 the weapon attack on the virtual sheet should have thrust/impale/crush options for one click attack
+FIXED: ID:5 weapon attack on the virtual sheet needs to allow you to pull for the head
+FIXED: ID:6 consider adding a pre-roll system like we used to have to queue up the rolls
+FIXED: ID:7 consider removing the map locking feature, it's never been used
+FIXED: ID:8 the property sheet doesn't come up full if an item is already selected
+FIXED: ID:9 there is a crashing bug lurking in line movement but it doesn't repro easily, click and move small lines to repro
+FIXED: ID:10 Tiny IRC window should probably be integrated with the main display
+FIXED: ID:11 Tiny IRC should probably support whisper and main channel changing
+FIXED: ID:12 Tiny IRC really needs a 'who' list
+FIXED: ID:13 the set top map and set bottom map features are really redundant at this point, should probably be deleted
+FIXED: ID:14 party management is a pain, we need a much easier way to set the current party
+FIXED: ID:15 we need some way to track runemagic consumed
+FIXED: ID:16 the _armor folder should not be searched for checks
+FIXED: ID:17 don't want to match the nickname against the _were version of a character unless _were is in the nick
+FIXED: ID:18 Sorceror checks are wrong for dwarves because of the encumberance correction being different
+FIXED: ID:19 clicking on a new object should clear the group selection if there is one
+FIXED: ID:20 New lines start in the wrong layer and are not subsequently moved
+
+FIXED: Enc is sent as an integer and then when enc*5 is used in check computation the wrong value is computed for the check formula.
+FIXED: Mysticism checks are not being done correctly, it should be !pct mysticism with no bonus
+FIXED: !gpct didn't work properly if there was a master
+FIXED: Disconnection results in abort, need reconnect logic
+FIXED: Person's name partial match should never match _were
+FIXED: We need to be able to do more general matching for skills like greping for people with SIZ 16 and such
+FIXED: Some kind of grep and sort to find keys more generally
+FIXED: When training with hours=n stopping condition you can use all n hours, not just < n hours.
+FIXED: The !rpt command should break the items into crits/specials/normals so that they add up, the current way of doing it is too confusing.
+FIXED: Add another dropdown to group characters using the _ in the player name
+FIXED: Choose virtual sheet character from parties as well as player groups
+FIXED: Changing the party with the UI doesn't seem to always update the UI's notion of what the current party is.
+FIXED: Shugenja with witchcraft scrape very badly
+FIXED: Equipped items should be scraped.
+FIXED: A second Party Info window would be useful.
+FIXED: When adding party icons, the incoming icon XAML might be badly formed, don't crash if that happens.  When generating icon XAML do not remove margin/transform more than one time.  Do not match very short tooltip names against long character names.  Use any given icon only one time.
+FIXED: SIZSRM and DEXSRM calculations in chargen were not right on created sheets, DexSrm() was wrong always.
+FIXED: Detect sheets with bogus damage modifier, DEXSRM, SIZSRM, or MDMG on them.
+FIXED: Validate enc changes due to bags on sheets
+FIXED: Added UI and back end support for tracking spells in presence
+FIXED: Make it so that if you roll 2h_longbow that works
+FIXED: Scrape current presence and display it in the presence commands
+FIXED: The camp command has no UI.
+FIXED: Need GM mode: If you log in with a name that starts with GM then you are in GM mode. The location tables don't change for the GM when someone does !gameaid loc whatever.
+FIXED: The 2nd map should really be map_parts for the GM since that's most useful, using same GM-mode trigger.
+FIXED: We currently flash from default to the correct map on startup.  Get rid of the flash.
+FIXED: Put the help in it's own file so the compile time isn't crazy.
+FIXED: The downloads should be grouped in the same way that player characters are for virtual sheets
+FIXED: detect and complain about 1999 era sheets in the verifier
+FIXED: detect hit locations that don't use TRUNC
+FIXED: detect total life calculations that don't use ROUND
+FIXED: ensure that when converting the stat locations in the formulas we only do it one time.
+FIXED: validate that rune magic users are tracking used rune magic
+FIXED: make victim command more flexible
+FIXED: need todo command
+FIXED: need event command
+FIXED: make todo @all work
+FIXED: killcounts should be per roller
+FIXED: use of client socket is not threadsafe
+FIXED: add command to make the bot join a new room
+FIXED: add command to make any give player send his gameaid rolls to some other room
+FIXED: miniIRC now uses the 2nd map slot, which is generally better for players, only the GM uses the 2nd map anyway for the most part
+FIXED: you can change target  chatrooms in gameaid, if you change rooms your gameaid rolls will go there and your miniIRC will follow you if you are using it
+FIXED: miniIRC sends and listens to the same room now...
+FIXED: Added UI for bot management, removed the little one-line command box that just took up space and nobody used, support rooms/nicks in miniIRC
+FIXED: gamehost should not consider the armor or SR or weapons when offering choices for checks
+FIXED: allow marking checks directly from ready rolls
+FIXED: allow target for spell casting in ready rolls
+FIXED: victims should be numbered
+FIXED: need to be able to roll parry damage
+FIXED: fix more thrust/crush/slash choices
+FIXED: need to be able to filter events and todos
+FIXED: check spirit screen in !sc make sure you get a free defense even if you don't order a parry
+FIXED: added a !Gpct terse option
+FIXED: added helper text so it's more obvious how to delete formations
+FIXED: need to support color in the sheet scraper so that rune levels get extra bonus
+FIXED: the path extension mechanism is terrible, I need something more interactive so you can extend easily and see where new nodes will go
+FIXED: the weapon attack on the virtual sheet should have thrust/impale/crush options for one click attack
+FIXED: weapon attack on the virtual sheet needs to allow you to pull for the head
+FIXED: consider removing the map locking feature, it's never been used
+FIXED: MiniIRC window should probably be integrated with the main display
+FIXED: MiniIRC really needs a 'who' list
+FIXED: the set top map and set bottom map features are really redundant at this point, should probably be deleted
+FIXED: party management is a pain, we need a much easier way to set the current party
+FIXED: we need some way to track runemagic consumed
+FIXED: MiniIRC should support main channel changing
+FIXED: gpct should allow you to specify exact rollers
+FIXED: parsing from chargen should create icons on the map
+FIXED: icons on the map should be whatever color you want them to be
+FIXED: there is a crashing bug lurking in line movement but it doesn't repro easily, click and move small lines to repro
+FIXED: !buff with no @ argument was not working properly.
+FIXED: MiniIRC should support whisper
+FIXED: Need to be able to close miniIRC tabs
+FIXED: Make sure that Main.myroom is seperate from the last known chatroom for output, they used to be the same.
+FIXED: Associate the current party with your current gameroom 'room' so that there can be any number of active parties at the same time
+FIXED: gameaid default map and hit location should be per gameroom like the party
+FIXED: Add a pre-roll system like we used to have to queue up the rolls
+FIXED: ForumToWiki needs some usage notes badly
+FIXED: The property sheet doesn't come up full if an item is already selected
+FIXED: MiniIRC should keep the who list for every joined channel current so that it doesn't have to keep asking for it
+FIXED: Don't list skills with 0 value in the help, don't show 0 skills on the html sheet, esp. unknown sorcery like "duration" and such.
+FIXED: Html sheet "lock" shouldn't match "divination block" it's just wrong to use strict substring
+FIXED: Spirit combat, all out attack 2nd chance attack is standard damage not max damage
+FIXED: Things like lore_plant needs to canonicalize to just plant and craft_butchery to just butchery 
+FIXED: When parsing chargen output allow adding skills other than dodge by putting * in front of the skill name
+FIXED: When an image is inserted we put the cover rectangle to the correct place if it was done via the library
+FIXED: Personal mana is tracked seperately
+FIXED: Generalize location rolling so it doesn't have to be a d20, type the location roll in the box after the location type
+FIXED: Added ad-hoc location rolls to ready rolls for things like disrupt or whatever that might need one
+FIXED: Stat rolls with a multiplier are interpreted as percentage rolls so if you add *3 or *5 you get a percentage rather than a pvp
+FIXED: Add +25 for basic touch to cheat sheet
+FIXED: display already saved rolls when loading/saving rolls
+FIXED: added upload images feature
+FIXED: use standard library access dialog for uploaded images too
+FIXED: sort rolls for easier choosing
+FIXED: consolidate library access dialog creation/result management
+FIXED: need UI to set the default map (added button)
+FIXED: need UI to increase size of grid (added Actions/Double Grid Size)
+FIXED: when rolling parry reaction damage, hit location did not use dice override specified
+FIXED: when adding ready rolls from the popup menu the check button does not appear and the rolls are not saved
+FIXED: note which rolls have been made in the rolls window so you can see what is left to do at a glance
+FIXED: when you right click on a skill/spell on the virtual sheet it would be nice to see some help for that item
+FIXED: parsed chargen items do not give away the critter name on ready rolls
+FIXED: you can change virtual sheets from the token popup menu for party characters
+FIXED: there is no 'add' submenu for adding ready rolls from the popup, you just click on the weapon 
+FIXED: added !cpct for ceremony percent rolls.  The operator is "$".
+FIXED: the saveKey coming from the right mouse menu roll adder did not normalize spaces to underscores.
+FIXED: row 140 of sheet for stored spells not importing
+FIXED: party command now accepts substrings and matches case insensitively
+FIXED: assorted changes in icon support for the party icons command, now finds more icons with fewer errors
+FIXED: added sorcery helper
+FIXED: need spell wizard to compute mana/presence cost
+FIXED: need to be able to set the default roll from ready rolls
+FIXED: default roll has to handle missile and regular, moved it to manage menu
+FIXED: sprint checks are not considering the encumberance of the person
+FIXED: the number of events allowed is too low
+FIXED: the http system should have a way to spit out a calendar automatically
+FIXED: use of regular expression in date matching could cause exceptions if there were syntax errors
+FIXED: each party should have a current date
+FIXED: the event command needs to accept the current party as an argument and use the name and date for events
+FIXED: the room names in the party folder cannot be allowed to conflict with the party folder names, all party origin names should get an @ prefix or # prefix
+FIXED: "!gpct boat -10" results in -10 as the master
+FIXED: the event tag should start with a capital letter and have a capital letter after each blank
+FIXED: x:null contamination for removed fields is gone
+FIXED: setting the stroke color to transparent set the fill color instead
+FIXED: mysticism and shugenja casting chance should reflect INT+POW changes
+FIXED: add skill bonuses to virtual sheet misc section
+FIXED: free int is now buffed in the misc section using +INT
+FIXED: battlemagic needs its own spell group to be buffed properly, scraper and buffer
+FIXED: damage modifier did not compute the special result properly if the str bonus was negative
+FIXED: str+siz buffs now affect damage modifier 
+FIXED: tannenheim has special damage rules and crushes properly
+FIXED: shugenja presence needs some kind of tracking
+FIXED: mana pools get consequences of buffs, max mana is updated live based on current POW etc.
+FIXED: lifepoints and mysticism calc was not quite right due to not finding the right stat folder
+FIXED: fatigue and endurance get stat buffs
+FIXED: shugenja magic pool uses the full school value, disregarding the deprecated available calculation on the sheet 
+FIXED: shugenja magic pool should not rest all the way to max if anything is in presence
+FIXED: shugenja held spells needs UI support (party info and virtual sheet)
+FIXED: shugenja commands less spammy
+FIXED: shugenja and presence need to their limit values in party info and dossier
+FIXED: shugenja pre-used magic was all being charged to whoever rolled the mana command, not the appropriate person... derp.
+FIXED: sheet import now flexibily detects start of items section, this makes Setsuko's sheet work correctly for instance
+FIXED: dossier details should be displayed on the virtual sheet
+FIXED: when deleting a bezier segment preserve its first control point the next segment is a bezier too
+FIXED: when moving bezier end points, the two nearest control points should move with the node, preserving the local slope
+FIXED: when selecting bezier segments you should get handles the control points nearest the node if available
+FIXED: There are extra refreshes that kill selection and it's driving me crazy...  Mouseup did not check to see if the item had not moved before saving it!
+FIXED: creating a path from a line should be done by extending the line at either end as though it were already a one segment path
+FIXED: existing paths should allow end extension even if a node hasn't been selected yet
+FIXED: it would be cool if movement from the server was detected and animated instead of insta-moved
+FIXED: map handles should be done in some generic way
+FIXED: create handles for both path segments around the selected node
+FIXED: need an easy way to mass move items an exact number of tiles in case the map items are getting near the edge  (Actions/Bulk Move)
+FIXED: on mouse up event on handles sometimes writes to the server when it isn't needed -- this is just small move deltas nothing for it but to snap more
+FIXED: lines should begin locked, they are handle moveable anyway
+FIXED: when you click a path the nearest node should be selected for manipulation
+FIXED: if you get a server update your selection is maintained if it still exists 
+FIXED: you shouldn't lose your selection if the server updates it
+FIXED: grouped items are getting odd sizes sometimes with a zillion digits, see arc's heroquest, they do not begin with rounded coordinates
+FIXED: sometimes ungrouping things lost an item because its id conflicted with the group that was about to be deleted
+FIXED: general_MouseEnter events build up, there's no need for more then one instance
+FIXED: text foreground property has no right click menu
+FIXED: add some visible indications of snapping
+FIXED: right angle line dragging isn't quite right, the handle offset is messed up
+FIXED: RightAngleAdjustEndPoint should work for paths too
+FIXED: get rid of pointlinelastclick and replace it with a visible handle that shows you are going to extend the line into a path
+FIXED: unusual mouse buttons should be ignored
+FIXED: IRC server is now built into gamehost 
+FIXED: send part notification on DC
+FIXED: catch exceptions on EndRead
+FIXED: buff system does not recompute dexsrm
+FIXED: buff system does not consider luck
+FIXED: when scraping spells use column C or D for spell points, see etrigan's sheet
+FIXED: stored spells can be associated with a magic spirit, this changes their buffs and organizes them on your sheet better
+FIXED: add group buff (and unbuff) command
+FIXED: enable buffing of individual skills and damage
+FIXED: added UI for setting and clearing buffs
+FIXED: make it easier to set skill buffs by using the searching facilities that are already there for setting checks
+FIXED: buff presence using magic bonus and INT
+FIXED: basic irc reconnect functional
+FIXED: wounds view should show total life
+FIXED: max hit points should be refreshable after buffing
+FIXED: max mana should be refreshable after buffing
+FIXED: hit locations in the wounds folder should track buffs on refresh
+FIXED: add buffs for skill categories like knowledge/perception to support ernaldan spells
+FIXED: add buffs/debuffs to AP and hit locations
+FIXED: add PROT buff
+FIXED: do something with one_use rune magic
+FIXED: spirit combat should be continuable by adding new rounds
+FIXED: support spirit inventory
+FIXED: track spirit mana use
+FIXED: spirit combat needs an soi for no action
+FIXED: spirit combat needs to be able to have different attack and defense pct
+FIXED: stats not checkable since I refactored that code
+FIXED: scrape and display red/green/blue sheet colors
+FIXED: herocast should be checkable
+FIXED: support alchemy skills, scraping, displaying, buffing and checking
+FIXED: if you lose your last buff the buffs are not recalulated so it seems like you kept your buff even though its gone
+FIXED: if a zero base is added for a new skill in a special form then we need to remove it when the form goes away so it doesn't get luck bonus etc.
+FIXED: added support for wizardry scraping and display
+FIXED: added music magic import features
+FIXED: spirit block should be giving 50% defense per pt
+FIXED: add performance mana for everyone
+FIXED: free defence from spirit block was getting full defense not zero plus the block
+FIXED: added !mtrn for mysticism training
+
+
+detect existing files in the image upload dir, warn if you try to overwrite them
+dragon shugenja school has a wierd bonus calculation which is not yet done, that means Gris is busted if INT or POW buffed
+add some path extension animations so that looks nice, it will be more common
+add battle mode so that saves are made more frequently during periods were more archiving would be nice
+when copying a bulk selection preserve Z order
+make sure specialization is working right in the sorcery wizard

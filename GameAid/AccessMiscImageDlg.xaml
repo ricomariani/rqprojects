@@ -1,0 +1,20 @@
+﻿<Window x:Class="GameAid.AccessMiscImageDlg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Access Misc Image" Height="400" Width="800">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="25">
+            <Button DockPanel.Dock="Right" Width="50" Click="Fetch_Click">Fetch</Button>
+            <TextBlock DockPanel.Dock="Left" Padding="5,0,5,0" VerticalAlignment="Center">Url:</TextBlock>
+            <TextBox Name="m_search" Height="25" VerticalAlignment="Center" KeyDown="m_search_KeyDown">http://yourserver.com/uploads/...</TextBox>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" Height="25">
+            <Button Name="m_ok" DockPanel.Dock="Right" Margin="5,0,0,0" Width="50" Click="m_ok_Click">OK</Button>
+            <Button Name="m_cancel" IsCancel="True" DockPanel.Dock="Right" Margin="5,0,0,0" Width="50" Click="m_cancel_Click">Cancel</Button>
+            <TextBlock VerticalAlignment="Center" Padding="5,0,5,0" DockPanel.Dock="Left">Width:</TextBlock>
+            <TextBox Name="m_width" KeyDown="m_width_KeyDown"  LostFocus="m_width_LostFocus" VerticalAlignment="Center" Width="100" DockPanel.Dock="Left">100</TextBox>
+            <TextBlock></TextBlock>
+        </DockPanel>
+        <StackPanel Name="m_results"></StackPanel>
+    </DockPanel>
+</Window>

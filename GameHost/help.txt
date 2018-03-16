@@ -1,0 +1,768 @@
+!atk
+Bot command
+Used by gameaid to do a full attack command in one roll
+
+!atk wpn:name pct:n dmg:damage idmg:special_damage loc:location
+.
+
+!atrn
+Bot command
+Trains attributes (STR, CON, etc.)
+
+!atrn [max_hours,] (count=n,hours=n,skill=n), cur_stat, max_stat, gain_roll [, book_pct, book_gain]
+
+The !Atrn variant provides terse output.
+.
+
+!box
+Bot command
+!box length width depth 
+
+Computes the surface area of a box with the indicated dimensions.  
+The dimensions can be decimals.  They are in feet.  The command is calibrated
+so that a 6 foot tall, 2.5 feet wide, and 2 feet depth box is SIZ 15.  That's
+a tall person and their pack and gear.
+
+The arguments can come in any order, they are treated the same anyway.
+.
+
+!buff
+Bot command
+Record a buff on a character
+
+!buff [@who] what (add buff)
+!buff [@who] id:xxx new description (update details)
+!buff [@who] id:nnn remove:yes (remove buff)
+Use !buffs to list the current buffs
+.
+
+!buffs
+Bot command
+List buffs on a character
+
+!buffs [@who] [-]filter1 [-]filter2 [-]filter3...
+.
+
+!buy
+Bot command
+Compute results of purchasing stuff from a merchant
+
+!buy pct:nn values:a,b,... [eval:nn] [lore:nn] [bargain:nn]
+
+The !Buy variant provides terse output.
+.
+
+!camp
+Bot command
+Manage camp actions and do the actual camping, see subcommands
+
+!camp now -- execute the camp actions
+!camp list -- show who is doing what
+!camp tasks -- show the camping options
+!camp who what -- set the camp action for the given person to be the task
+!camp shoot -- show the missile weapons for the party
+!camp shoot who -- show the weapons available for the indicated person
+!camp shoot who weapon -- set the missile weapon for the indicated person
+.
+
+!check
+Bot command
+Record or update a check
+
+!check who what [#n] specify who gets what check, partial matches...
+  [chk:nn,nn]   override the chk roll, (default computes skill and bonus)
+  [pct:nn]      use a pct roll instead of a chk roll to gain (for stats)
+  [gain:roll]   override the gain roll (default is 1d6)
+  [remove:yes]  remove the indicated check
+  [replace:yes] replace the indicated check
+  [manual:yes]  specify an ad hoc check like 'xmas pow' instead of 'what'
+.
+
+!checks
+Bot command
+Resolve checks
+
+!checks who|all [resolve:yes] [heroquest:yes]
+.
+
+!chk
+Bot command
+Try to cash in a check, this is the parter to !pct
+.
+
+!choose
+Bot command
+Choose randomly from the list of arguments, e.g. !choose head tail
+
+!choose [count:n] [choice1:n] [choice2:n] ...
+
+!choose count:3 head tail (3 heads or tails)
+!choose male:100 female:52  (choose from 100 males and 52 females)
+!choose   (chooses randomly from the party)
+.
+
+!d5
+Bot command
+Lesley d5 mode ENGAGED!
+.
+
+!d100
+Bot command
+Lesley rolls restored to the normal stupidly-lucky level.
+.
+
+!echo
+Bot command
+Type back whatever you said
+.
+
+!etrigan
+Bot command
+Random snivelling worthy of Etrigan.
+
+Use !Etrigan for emote and snivel.
+.
+
+!event
+Bot command
+Record an event (must specify legal date)
+
+!event party what (adds an event on the current party date and name)
+
+!event [@who] what (add event)
+!event [@who] id:xxx new description (update details)
+!event [@who] id:nnn remove:yes (remove event)
+
+Use !events to list the current events
+.
+
+!events
+Bot command
+Display events
+
+!events [@who] [-]filter1 [-]filter2 [-]filter3...
+.
+
+!f
+Bot command
+Find the top 5 of some attribute/skill in the party, shortcut for !find _party top:5 .
+
+!f skill [quick find in your party]
+.
+
+!fat
+Bot command
+Record fatigue (synonym of !fatigue)
+
+!fatigue who [hard] amount (to consume fatigue)
+!fatigue who|all  (to display fatigue)
+!fatigue remove:yes  (remove record of use)
+!fatigue rest:yes amount (restore hard fatigue to party)
+.
+
+!fatigue
+Bot command
+Record fatigue (synonym of !fat)
+
+!fatigue who [hard] amount (to consume fatigue)
+!fatigue who|all  (to display fatigue)
+!fatigue remove:yes  (remove record of use)
+!fatigue rest:yes amount (restore hard fatigue to party)
+.
+
+!find
+Bot command
+Search the characters for the given skill, item, whatever
+
+!find who what [top:nn] [min:nn] [max:nn] ...
+
+!find all savvy top:5   -- the top 5 generals
+!find all /armor min:50 -- anyone who knows a skill that starts with armor
+!find party first aid   -- the party first aid skills in order (both words match)
+!find me butcher        -- any skills I have that include butchery
+!find me knowledge      -- all my knowledge skills
+!find me -knowledge     -- all non-knowledge skills
+!find me /scan/         -- my scan skill, darkscan does not match this
+!find me /_green		-- find my green skills (note starts with /_,  _green would not work)
+
+Directories that start with _ are not searched unless the one of the required strings  is "_" or starts with "/_".  
+This means that the _misc folder is not searched for instance, nor are any of the cell coloring folders _red _green etc.
+These folders all start with _ deliberately becuase they should not normally be searched for matching skills/stats.
+.
+
+!form
+Bot command
+Display or change the current form
+!form who (list current form and available forms)
+!form who form (change to the indicated form)
+!form who none (remove any form and return to normal)
+.
+
+!fumble
+Bot command
+Roll a melee fumble, optional arguments for missile, natural
+
+!fumble missile
+!fumble natural
+
+A synonym of !roll fumble_melee, !roll fumble_natural, !roll fumble_missile etc.
+.
+
+!gain
+Bot command
+The reverse of !use; notes that you have gained a consumable
+
+These commands can track what you have used or what you have left.  Start with a gain or a use as needed.
+!used who|party (show current usage)
+!use who what how-much (track that you used something)
+!gain who what how-much (track that you gained something)
+.
+
+!gameaid
+Bot command
+Send specific commands (loc or map) to any gameaid clients that are logged in
+
+!gameaid loc location_chart -- set default location table
+!gameaid map map name -- set gameaid default map
+.
+
+!gbest
+Bot command
+Roll the 3 best of the indicated skill
+
+!gbest skill
+.
+
+!gbuff
+Bot command
+Record/remove a buff on a the party
+
+!gbuff what (add buff to party)
+!gbuff what remove:yes (remove named buff from party)
+Use !buffs to list the current buffs
+.
+
+!gcmd
+Bot command
+Run the indicated command as though all party members typed it
+
+!gcmd !anycommand any args
+
+If you include {@} in the args it is replaced by the current player.  This means you can do stuff like this:
+
+!gcmd !check {@} POW  
+
+to give everyone a pow check.
+
+The !Gcmd variant provides terse output.
+.
+
+!gpct
+Bot command
+Group rolls the indicated skill, best skill is the master.  The master and helpers may be explicitly specified.  
+
+!gpct skill [master [helper1 helper2...]]
+
+The !Gpct variant provides terse output.
+.
+
+!groll
+Bot command
+Everyone in the group makes the indicated roll
+
+!groll roll
+.
+
+!groutine
+Bot command
+Everyone in the group does the indicated routine (e.g. "camp", used by !camp)
+.
+
+!help
+Bot command
+Search the database for the indicated spell, skill, command, whatever
+
+!help name [#nnn] -- search for things called name
+!help desc:yes text1 -text2 [#nnn] -- search for things with text1 and without text2 in the description
+e.g. !help slash #2
+.
+
+!hours
+Bot command
+Start a training session with the indicated number of hours
+.
+
+!insult
+Bot command
+Create a random insult.
+.
+
+!loc
+Bot command
+Roll a hit location, synonym for !roll loc_whatever
+.
+
+!loot
+Bot command
+Record acquired loot for a character
+
+!loot who what enc:nnn room:xxx (to loot something)
+
+!loot who|all (to display loot)
+!loot who item:xxx (to assign loot to a new person)
+!loot item:xxx remove:yes (remove loot)
+!loot update item:xxx new description [enc:nnn] [room:xxx] (update details)
+.
+
+!loots
+Bot command
+Synonym for !loot
+.
+
+!mana
+Bot command
+Record mana use or recovery for a character
+
+!mana who type amount [#n] (to consume mana)
+
+!mana who|all  (to display mana)
+!mana remove:yes  (remove record of use)
+!mana rest:yes  (add daily mpts and remove schools)
+.
+
+!nick
+Bot command
+Nick is for losers, use /nick
+.
+
+!note
+Bot command
+Record any note you wish to remember for later recall
+
+!note [@who] what (add note)
+
+!note [@who] id:xxx new description (update details)
+!note [@who] id:nnn remove:yes (remove note)
+Use !notes to list the current notes
+.
+
+!notes
+Bot command
+Report from the notes, you can filter to search
+
+!notes [@who] [-]filter1 [-]filter2 [-]filter3...
+.
+
+!npc
+Bot command
+Record info about an NPC
+
+!npc [@who] what (add info)
+!npc [@who] id:xxx new info (update details)
+!npc [@who] id:nnn remove:yes (remove info)
+Use !who to list the info
+.
+
+!party
+Bot command
+A set of subcommands for managing the party and its members
+
+!party -- show current party and date
+!party date -- set the date for the current party
+!party help -- command usage
+!party partyname -- set the current party
+!party list -- show all available parties
+!party show -- show the current party
+!party members -- show the current party members
+!party disabled -- show any disabled members
+!party add who -- add member
+!party remove who -- remove member
+!party disable who -- temporarily disable member from party
+!party enable who -- re-enable member
+!party new partyname -- create a name party name
+.
+
+!pc
+Bot command
+Record info about a PC
+
+!pc [@who] what (add info)
+!pc [@who] id:xxx new info (update details)
+!pc [@who] id:nnn remove:yes (remove info)
+Use !who to list the info
+.
+
+!pct
+Bot command
+A basic percentage roll, synonym for !roll (whatever)%
+.
+
+!pow
+Bot command
+A basic pvp roll, synonym for !roll (whatever)@
+.
+
+!presence
+Bot command
+Records a spell placed in presence by a character
+
+!presence who what cost:nnn (to add something to presence)
+!presence who|all (to display presence)
+!presence who spell:xxx new description [cost:nnn] (update details)
+!presence who spell:xxx remove:yes (remove presence)
+.
+
+!pressence
+Bot command
+There is only one s in presence.
+.
+
+!rcmd
+Bot command
+Repeats any command the indicated number of times
+
+!rcmd count cmd
+
+If you include {#} in the command text it is replaced with the iteration number, useful for varying the command.
+
+The !Rcmd variant provides terse output.
+.
+
+!remaining
+Bot command
+Reports remaining hours in a training session, used by gameaid internally for the training screen
+.
+
+!roll
+Bot command
+The basic roll command, supports the usual roll syntax, e.g. !roll 3d6+5
+
+Try !help Bot Tutorial for more details
+.
+
+!round
+Bot command
+Declare a new round
+
+!round <whatever>
+
+Running this command declares a new round and sets the SR to 0.  At this time new pending rolls can be made since the sr is 0.
+.
+
+!routine
+Bot command
+Perform the named routine, such as "camp" by the !camp command, a routine is a list of tasks
+.
+
+!rpt
+Bot command
+Repeat the indicated percentage until the stopping criteria is met
+
+!rpt pct:nn [test:nn] [fail:nn] [success:nn] [fumble:nn] [attempt:nn] [crit:nn] [special:nn]
+
+The !Rpt variant provides terse output.
+.
+
+!runemagic
+Bot command
+Records runemagic used by a player
+
+!runemagic who what used:n  (sets the number of charges used to n)
+!runemagic who|all (to display used runemagic)
+!runemagic who xxx remove:yes (remove recorded usage, setting usage to zero does the same thing)
+.
+
+!sc
+Bot command
+Perform spirit combat
+
+!sc name1:xx pct1:xx pow1:xx soi1:xxx name2:xx pct2:xx pow2:xx soi2:xx rounds:xx
+
+Soi: Soi can be 'a', 'd', 'aa', 'ad', 'dd', or 'x' (for no action)
+
+Options: 
+
+You can use @name to load the spirit combat from that character's matching stats instead of name1, pct1 etc.
+
+You can use @name/spiritid to load from a recorded spirit in the spirit inventory of the character.
+
+shield[1|2]:n, screen[1|2]:n, resist[1|2]:n, block[1|2]:n for spirit shield, screen, resist, or block
+
+apct[1|2]:n and dpct[1|2]:n can be used if the attack and defense percentages need to be different.
+
+Note that arguments can be given partially and when rounds are executed each round begins where the last left off.
+
+When you specific a name, everything for that participant is reset.  So you can keep specifying for instance only name2, pct2, and so forth.
+
+The !Sc variant provides terse output.
+The !ssc variant resolves one attack
+.
+
+!ssc
+Bot command
+Perform one half of one round of spirit combat
+
+This command uses the same parameters as the normal !sc command but it is designed to resolve
+exactly one attack and defense.  This is very useful if there are going to be split attacks and defenses
+or other such complicated cases.
+
+To simplify things the following defaults apply:
+
+-if not specified name1 is attacker and name2 is defender
+-any attacks in the defender soi are ignored, so aa is the same as 'x' and 'ad' is the same as 'd'
+-EXCEPTION if 'dd' is ordered and the defender crits, he gets an attack as required
+-for the above reason you should specify the attackers defense against this opponent if any
+ because he might have to parry a dd crit.
+-if no defense is specified 'd' is assumed to save on typing.
+-if no attack is specified 'a' is assumed to save on typing.
+-all the usual buffs are supported
+
+The minimum command looks like this:
+!ssc pow1:20 pow2:15 pct1:75 pct2:50
+.
+
+!sell
+Bot command
+Compute results of selling stuff to a merchant
+
+!sell pct:nn values:a,b,... [eval:nn] [lore:nn] [bargain:nn]
+
+The !Sell variant provides terse output.
+.
+
+!shugenja
+Bot command
+Records a shugenja effect held by a player
+
+!shugenja who what school:xxx cost:nnn charges:nnn (to add new shugenja effect)
+!shugenja who|all (to display shugenja effects)
+!shugenja who spell:xxx new description [school:xxx cost:nnn charges:nnn] (update details)
+!shugenja who spell:xxx remove:yes (remove shugenja effect)
+.
+
+!sleep
+Bot command
+Stop accepting commands for the indicated time period, in seconds
+.
+
+!spiritmana
+Bot command
+Records mana used by a bound spirit belonging to (e.g.) a shaman
+
+!spiritmana who what used:n  (sets the amount used to n)
+!spiritmana who|all (to display used spiritmana)
+!spiritmana who xxx remove:yes (remove recorded usage, setting usage to zero does the same thing)
+.
+
+!sr
+Bot command
+Declare strike rank
+
+!sr [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Running this command causes any gameaid clients with pending actions up to the indicated SR to execute them.
+.
+
+!suckstobeyou
+Bot command
+Same as !victim
+.
+
+!summon
+Bot command
+Perform a summoning ritual, various creature types supported
+
+!summon pct:nn creature [type:creature-subtype]
+
+Creature class can be spirit:xx elemental:xx nymph:xx other:xx name:xxx
+samples:
+   spirit:(spell, magic, healing, intellect, power, passion, disease)
+   elemental:gnome nymph:niaad name:george
+   other:(demon, hellion, ghost, wraith)
+Non-standard summons can override int:xx or pow:xx
+
+The !Summon variant provides terse output.
+.
+
+!task
+Bot command
+Perform the indicated task, e.g. "hunt", or "forage", used by the !camp command
+
+!task [who] task
+.
+
+!todo
+Bot command
+Record a todo
+
+!todo [@who] what (add todo)
+!todo [@who] id:xxx new description (update details)
+!todo [@who] id:nnn remove:yes (remove todo)
+Use !todos to list the current todos
+.
+
+!todos
+Bot command
+List todos
+
+!todos [@who] [-]filter1 [-]filter2 [-]filter3...
+.
+
+!train
+Bot command
+Train stats or skills, this version looks up the percentages and hours for you, you provide the skill/stat name
+
+!train who what [#n] specify who gets what check, partial matches...
+  [gain:roll]      set the gain roll (default is 1d6-2)
+  [book:pct]       use if a book or trainer is available
+  [bookgain:roll]  book gain roll (default is 2)
+  [skill:n]        stop at the indicated skill
+  [count:n]        train the indicated number of counts, 1 is default
+  [hours:n]        train for indicated number of hours
+  [session:n]      set the hour cap for the session
+
+The !Train variant provides terse output.
+.
+
+!trn
+Bot command
+Train skills, you provide all the criteria explicitly
+
+!trn [max_hours,] (count=n,hours=n,skill=n), cur_skill, bonus, gain_roll [, book_pct, book_gain]
+
+The !Trn variant provides terse output.
+.
+
+!mtrn
+Bot command
+Train mysticism via meditation, you provide all the criteria explicitly
+
+!mtrn [max_hours], (count=n,hours=n,skill=n), cur_mysticism [, master_pct]
+
+Each attempt costs 4 hours a day every day for a season, or 228 hours.
+
+The !Mtrn variant provides terse output.
+.
+
+!ktrn
+Bot command
+Train a ki skill, you provide all the criteria explicitly
+
+!ktrn [max_hours,] (count=n,hours=n,skill=n), ki_skill, normal_skill, gain_roll
+
+Chance of success is gated by the ki_skill value, but cost in hours is gated by the its parent skill, which must be a mastery.
+
+The !Ktrn variant provides terse output.
+.
+
+!use
+Bot command
+Record consumption of something
+
+These commands can track what you have used or what you have left.  Start with a gain or a use as needed.
+!used who|party (show current usage)
+!use who what how-much (track that you used something)
+!gain who what how-much (track that you gained something)
+.
+
+!used
+Bot command
+Report consumption
+
+These commands can track what you have used or what you have left.  Start with a gain or a use as needed.
+!used who|party (show current usage)
+!use who what how-much (track that you used something)
+!gain who what how-much (track that you gained something)
+.
+
+!victim
+Bot command
+Choose a victim from the party or from a named list, with weights
+
+!victim [count:n] [choice1:n] [choice2:n] ...
+
+!victim count:3 head tail (3 heads or tails)
+!victim male:100 female:52  (choose from 100 males and 52 females)
+!victim  (chooses a victim randomly from the party)
+.
+
+!who
+Bot command
+List info on a character or characters
+
+!who @person [-]filter1 [-]filter2 [-]filter3...
+.
+
+!wound
+Bot command
+Record wounds on a character
+
+!wound who location number (to add wounds)
+!wound who|all  (to display wounds)
+!wound remove:yes  (remove record of wounds)
+!wound who location number (to add wounds)
+!wound who|all  (to display wounds)
+!wound remove:yes  (remove record of wounds)
+.
+
+!wounds
+Bot command
+Report wounds
+
+!wounds who location number (to add wounds)
+!wounds who|all  (to display wounds)
+!wounds remove:yes  (remove record of wounds)
+!wounds who location number (to add wounds)
+!wounds who|all  (to display wounds)
+!wounds remove:yes  (remove record of wounds)
+.
+
+Bot Tutorial
+Bot command
+The most basic command is a percentage chance to succeed.  For this you use !pct.  In this case the chance to succeed is 50%.  And the player rolls a 45, indicated success.  It says "Hit" because the most common roll type here is combat (a swing) but it could be a dodge, a parry, a climb, anything.
+
+<Arc> !pct 50
+* __ Arc: 50 % => 50% roll => 45 Hit!
+
+The pct command also interprets the rolls and tells you if anything special happened like a fumble, special, or critical hit.  If you were lucky enough to have a 5000% chance to hit (this never happens) then your chance of critical would be similarly astonishing.  I make such a roll below to basically force a critical to be reported.
+
+<Arc> !pct 5000
+* __ Arc: 5000 % => 5000% roll => 59 Critical!
+
+When rolling up characters you usually need several of one type of die simulated.  The notation 3d6 means roll 3 dice each of which is numbered 1 to 6 and add the result.  This is a very common roll.  In craps you roll 2 dice and add them that would be 2d6.  Here's a sample.  Note the result shows what was rolled and the total.
+
+<Arc> !roll 3d6
+* __ Arc: 3 d 6 => ( 3 2 4 ) => Total 9
+
+You can of course simulate any kind of die you like.  20 sided dice come up a lot in gaming, here's a sample rolling 1 die with 20 sides (1d20)
+
+<Arc> !roll 1d20
+* __ Arc: 1 d 20 => 7
+
+Sometimes die rolls have to be looked up on a table and interpreted.  The most common reason for this in runequest is when you hit something, you roll the location you hit.  There is a special command for this.  This command rolls 1d20 and then looks up the result in the location table.
+
+<Arc> !loc
+* __ Arc: ( 1 d 20 ) => ( Humanoid Melee Hit Location => 7 ) => Left Leg
+
+There is a seperate location table for missile attacks.  Use !loc missile to look that up.
+
+<Arc> !loc missile
+* __ Arc: ( 1 d 20 ) => ( Humanoid Missile Hit Location => 7 ) => Abdomen
+
+The final kind of roll you can make is a contest roll.  My skill versus your skill.  Like arm wrestling would be my "STR" vs. your "STR".   The most common reason for this kind of contest is if I am trying to affect you with a hostile spell.  The contest is my soul vs. your soul -- "POW" vs. "POW" hence the name of the command !pow.  You enter your current effective power and it tells you what you can defeat with the roll you make.   In this example a 48 rolled is enough to only defeat someone of equal power (lower is better).  This is handy because often you don't know the power of the thing you are fighting so the GM can interpret the roll without telling you what the opponents power is.
+
+<Arc> !pow 15
+* __ Arc: 15 @ => 15 PvP roll => 48 Defeats 15!
+
+Other special rolls are really lookups like !loc.  The below is a roll on the fumble table.  In fact !loc is just shorthand for !roll loc  and !loc missile is just shorthand for !roll loc_missile.  Really the !roll command is doing the work for all of these commands but it's much more convenient to use the shortcuts we have made.  Here's a roll on the fumble table.  And afterwords in this case you would use !loc to find out what armor you just lost.
+
+<Arc> !roll fumble
+* __ Arc: ( 1 d 100 ) => ( Melee or Parry Fumble => 45 ) => Armor strap breaks: roll hit location for lost armor
+
+Lastly you can use basic arithmetic commands to sum, subtract, or group rolls like this combination  4 six sided dice, plus 1 ten sided die, plus 1.  That could easily be say a giant with a 4d6 strength bonus, using a spear which does 1d10+1 so the total damage is 4d6+1d10+1  --- 25 damage in this case.  That's a ton of damage.
+
+<Arc> !roll 4d6+1d10+1
+* __ Arc: 4 d 6 + 1 d 10 + 1 => ( 6 2 4 4 ) + 8 + 1 => Total 25
+
+There are more commands but you'll go a long way with just these.  You can see these in the context of a real encounter by reading the story of Yoki's death -- that was a real session from many years ago when I first wrote this robot.
+.

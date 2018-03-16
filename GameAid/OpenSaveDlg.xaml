@@ -1,0 +1,23 @@
+﻿<Window x:Class="GameAid.OpenSaveDlg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Chooser" Height="300" Width="600">
+    <Grid Name="grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="75"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListBox Grid.Column="0" Grid.Row="0" Name="selList" SelectionChanged="selList_SelectionChanged"></ListBox>
+        <TextBox Grid.Column="0" Grid.Row="1" Name="selText"></TextBox>
+        <StackPanel Name="panel" Grid.Column="1" Grid.Row="0">
+            <Button Margin="2,0,0,2" IsDefault="True" Click="OK_Button_Click">OK</Button>
+            <Button Margin="2,5,0,2" IsCancel="True">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>

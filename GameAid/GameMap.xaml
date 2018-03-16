@@ -1,0 +1,730 @@
+﻿<UserControl x:Class="GameAid.GameMap" KeyDown="GameMap_KeyDown"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:l="clr-namespace:GameAid"
+    Height="500" Width="619">
+    <UserControl.Resources>
+        <ContextMenu x:Key="ThicknessMenu">
+            <MenuItem Header="No Change"/>
+            <Separator/>
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">0.5</TextBlock>
+                        <Line Stroke="Black" StrokeThickness=".5" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">1</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="1" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">1.5</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="1.5" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">2</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="2" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Thickness_Click" IsCheckable="true" IsChecked="true">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">3</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="3" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">4</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="4" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">5</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="5" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">6</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="6" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">7</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="7" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">8</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="8" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">8</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="8" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">9</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="9" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Thickness_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">10</TextBlock>
+                        <Line Stroke="Black" StrokeThickness="10" X1="0" X2="50" Y1="5" Y2="5"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+        </ContextMenu>
+
+        <ContextMenu x:Key="OpacityMenu">
+            <MenuItem Header="No Change"/>
+            <Separator/>
+            <MenuItem Click="Opacity_Click" IsCheckable="true" IsChecked="true">>
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">1.0</TextBlock>
+                        <Rectangle Opacity="1.0" Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Opacity_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">0.9</TextBlock>
+                        <Rectangle Opacity="0.9" Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Opacity_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">0.8</TextBlock>
+                        <Rectangle Opacity="0.8" Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Opacity_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">0.7</TextBlock>
+                        <Rectangle Opacity="0.7" Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Opacity_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">0.6</TextBlock>
+                        <Rectangle Opacity="0.6" Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Opacity_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">0.5</TextBlock>
+                        <Rectangle Opacity="0.5" Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Opacity_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">0.4</TextBlock>
+                        <Rectangle Opacity="0.4" Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Opacity_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">0.3</TextBlock>
+                        <Rectangle Opacity="0.3" Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Opacity_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">0.2</TextBlock>
+                        <Rectangle Opacity="0.2" Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Opacity_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">0.1</TextBlock>
+                        <Rectangle Opacity="0.1" Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+        </ContextMenu>
+
+        <ContextMenu x:Key="StrokeMenu">
+            <MenuItem Header="No Change"/>
+            <Separator/>
+                <MenuItem Click="Stroke_Click">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="100">Black</TextBlock>
+                            <Rectangle Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+            <MenuItem Click="Stroke_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">White</TextBlock>
+                        <Rectangle Fill="White" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Stroke_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Grey</TextBlock>
+                        <Rectangle Fill="Gray" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Stroke_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Red</TextBlock>
+                        <Rectangle Fill="Red" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Stroke_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Green</TextBlock>
+                        <Rectangle Fill="Green" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Stroke_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Blue</TextBlock>
+                        <Rectangle Fill="Blue" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Stroke_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Magenta</TextBlock>
+                        <Rectangle Fill="Magenta" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Stroke_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Cyan</TextBlock>
+                        <Rectangle Fill="Cyan" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Stroke_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Yellow</TextBlock>
+                        <Rectangle Fill="Yellow" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="NoStroke_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">None</TextBlock>
+                        <Rectangle Fill="Transparent" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+        </ContextMenu>
+        <ContextMenu x:Key="FillMenu">
+            <MenuItem Header="No Change"/>
+            <Separator/>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Black</TextBlock>
+                        <Rectangle Fill="Black" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">White</TextBlock>
+                        <Rectangle Fill="White" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Grey</TextBlock>
+                        <Rectangle Fill="Gray" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Red</TextBlock>
+                        <Rectangle Fill="Red" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Green</TextBlock>
+                        <Rectangle Fill="Green" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Blue</TextBlock>
+                        <Rectangle Fill="Blue" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Magenta</TextBlock>
+                        <Rectangle Fill="Magenta" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Cyan</TextBlock>
+                        <Rectangle Fill="Cyan" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Yellow</TextBlock>
+                        <Rectangle Fill="Yellow" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">White Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource Shine1}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Grey Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineGrey}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Red Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineRed}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Green Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineGreen}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Blue Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineBlue}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Magenta Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineMagenta}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Cyan Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineCyan}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Yellow Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineYellow}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="NoFill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">None</TextBlock>
+                        <Rectangle Fill="Transparent" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+        </ContextMenu>
+        <ContextMenu x:Key="HandleMenu" Opened="ContextMenu_Opened">
+            <MenuItem x:Name="Tag" Header="-"/>
+            <Separator/>
+            <MenuItem x:Name="Lock" Header="Lock" Click="Lock_Click"/>
+            <MenuItem x:Name="Unlock" Header="Unlock" Click="Unlock_Click"/>
+            <MenuItem x:Name="Tooltip" Header="Set Tooltip..." Click="SetTooltip_Click"/>
+            <Separator/>
+            <MenuItem x:Name="Layer" Header="Send To Layer">
+                <MenuItem x:Name="l0" Header="0: Background Grid" Click="NewLayer_Click"/>
+                <MenuItem x:Name="l1" Header="1: Rect, Tile, Ellipse " Click="NewLayer_Click"/>
+                <MenuItem x:Name="l2" Header="2: Spare" Click="NewLayer_Click"/>
+                <MenuItem x:Name="l3" Header="3: Text" Click="NewLayer_Click"/>
+                <MenuItem x:Name="l4" Header="4: Spare" Click="NewLayer_Click"/>
+                <MenuItem x:Name="l5" Header="5: Lines" Click="NewLayer_Click"/>
+                <MenuItem x:Name="l6" Header="6: Doors/Objects" Click="NewLayer_Click"/>
+                <MenuItem x:Name="l7" Header="7: Tokens" Click="NewLayer_Click"/>
+                <MenuItem x:Name="l8" Header="8: Spare" Click="NewLayer_Click"/>
+            </MenuItem>
+        </ContextMenu>
+        <DrawingImage x:Key="Horizon_Image_Right">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Geometry="F1 M 427.825,253.767L 236.861,402.492L 236.869,317.236L 110.189,317.236C 109.131,317.236 107.676,317.427 106.021,317.427C 94.0387,317.427 88.904,308.435 86.492,298.013L 86.492,204.821C 94.424,198.796 95.748,195.563 107.839,194.4L 241.1,194.389L 241.1,109.159L 427.825,253.767 Z ">
+                        <GeometryDrawing.Brush>
+                                <SolidColorBrush Color="Black"/>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="M 240.856,392.539L 419.816,253.161L 245.093,117.849L 245.093,198.225L 107.429,198.225C 96.8427,199.243 95.3413,202.672 90.4853,206.361L 90.4853,296.909C 94.724,315.224 105.319,312.169 109.549,312.169L 240.863,312.169L 240.856,392.539 Z ">
+                        <GeometryDrawing.Brush>
+                            <SolidColorBrush Color="Black"/>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="M 316.631,334.527L 420.456,253.776L 245.733,118.464L 245.733,198.84L 122.933,198.84C 175.283,263.6 239.851,308.831 316.631,334.527 Z ">
+                        <GeometryDrawing.Brush>
+                            <SolidColorBrush Color="Black"/>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+    </UserControl.Resources>
+
+    <DockPanel Name="client" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <DockPanel DockPanel.Dock="Top">
+            <Menu DockPanel.Dock="Left" VerticalAlignment="Center">
+                <MenuItem Header="Edit" >
+                    <MenuItem Header="Cut" Click="Cut_Click"/>
+                    <MenuItem Header="Copy" Click="Copy_Click"/>
+                    <MenuItem Header="Paste" Click="Paste_Click"/>
+                    <Separator/>
+                    <MenuItem Header="Undo" Click="Undo_Click"/>
+                    <MenuItem Header="Redo" Click="Redo_Click"/>
+                    <Separator/>
+                    <MenuItem Name="group" Header="Group" Click="Group_Click"/>
+                    <MenuItem Name="ungroup" Header="Ungroup" Click="Ungroup_Click"/>
+                </MenuItem>
+                <MenuItem Header="Actions">
+                    <MenuItem Header="Upload Image..." Click="UploadImages_Click"/>
+                    <MenuItem Header="Access Uploaded Image..." Click="AccessUploadedImage_Click"/>
+                    <Separator/>
+                    <MenuItem Header="Access Library..." Click="AccessLibrary_Click"/>
+                    <MenuItem Header="Access Misc Image..." Click="AccessMiscImage_Click"/>
+                    <MenuItem Header="Import Images..." Click="ImportImages_Click"/>
+                    <Separator/>
+                    <MenuItem Name="itemlock" Header="Lock Items" Click="ItemLock_Click"/>
+                    <MenuItem Name="itemunlock" Header="Unlock Items" Click="ItemUnlock_Click"/>
+                    <MenuItem Name="itemsnap" Header="Snap Lines" Click="ItemSnap_Click"/>
+                    <Separator/>
+                    <MenuItem Name="cleanuplines" Header="Connect Loose Lines" Click="CleanupLines_Click"/>                    
+                    <MenuItem Name="linetopath" Header="Create Path from Lines" Click="MakePath_Click"/>
+                    <Separator/>
+                    <MenuItem Name="makesquaretile" Header="Make Square Tile" Click="MakeRectTile_Click"/>
+                    <MenuItem Name="makeroundtile" Header="Make Round Tile" Click="MakeRoundTile_Click"/>
+                    <Separator/>
+                    <MenuItem Name="addgrid" Header="Add Background Grid" Click="AddGrid_Click"/>
+                    <Separator/>
+                    <MenuItem Name="addparty" Header="Add Party Icons" Click="AddParty_Click"/>
+                    <Separator/>
+                    <MenuItem Name="bulklayer" Header="Send To Layer">
+                        <MenuItem Name="m0" Header="0: Background Grid" Click="BulkLayer_Click"/>
+                        <MenuItem Name="m1" Header="1: Rect, Tile, Ellipse" Click="BulkLayer_Click"/>
+                        <MenuItem Name="m2" Header="2: Spare" Click="BulkLayer_Click"/>
+                        <MenuItem Name="m3" Header="3: Text" Click="BulkLayer_Click"/>
+                        <MenuItem Name="m4" Header="4: Spare" Click="BulkLayer_Click"/>
+                        <MenuItem Name="m5" Header="5: Lines" Click="BulkLayer_Click"/>
+                        <MenuItem Name="m6" Header="6: Doors/Objects" Click="BulkLayer_Click"/>
+                        <MenuItem Name="m7" Header="7: Tokens" Click="BulkLayer_Click"/>
+                        <MenuItem Name="m8" Header="8: Spare" Click="BulkLayer_Click"/>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Double Grid Size" Click="DoubleGrid_Click"/>
+                    <MenuItem Header="Bulk Move" Click="BulkMove_Click"/>
+                </MenuItem>
+                <MenuItem Name="formations" Header="Formations" >
+                    <MenuItem Header="Add Selected" Click="AddFormation_Click"/>
+                </MenuItem>
+            </Menu>
+            <Label VerticalAlignment="Center" DockPanel.Dock="Left">Map:</Label>
+            <Button DockPanel.Dock="Right" Margin="5,0,0,0" Height="23" Click="Button_Click">Set Default Map</Button>
+            <ComboBox Margin="5,0,0,0" Height="23" Name="currentPath" Width="Auto" SelectionChanged="currentPath_SelectionChanged" />
+        </DockPanel>
+        <Canvas Height="1" DockPanel.Dock="Top" Background="{DynamicResource NormalBrush}"/>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" MinHeight="30" Background="{DynamicResource Shine1}">
+            <Canvas Width="5"/>
+            <Button ToolTip="Move" VerticalAlignment="Center" Name="buttonMove" Click="drawing_button_Click" Padding="9,0,0,0">
+                <Canvas Width="17" Height="17" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Path Margin="0,0,0,65.164" Fill="#FF000000" Stretch="Fill" Stroke="#FF000000" Data="M240,272 L240,112 352,224 304,224 352,312 326,326 277,237 240,272" Width="113" HorizontalAlignment="Left">
+                        <Path.LayoutTransform>
+                            <ScaleTransform ScaleX=".07" ScaleY=".07"/>
+                        </Path.LayoutTransform>
+                    </Path>
+                </Canvas>
+            </Button>
+            <Canvas Width="5"/>
+            <Button ToolTip="Pan" VerticalAlignment="Center" Name="buttonPan" Click="drawing_button_Click" Width="35">
+                    <Canvas Width="17" Height="17" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-5,-5,0,0">
+                        <Canvas.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX=".7" ScaleY=".7"/>
+                            </TransformGroup>
+                        </Canvas.LayoutTransform>
+                        <Image Margin="14,8,0,0" Source="{DynamicResource Horizon_Image_Right}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="100" Width="100">
+                            <Image.LayoutTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX=".1" ScaleY=".1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Image.LayoutTransform>
+                        </Image>
+                        <Image Margin="0,8,0,0" Source="{DynamicResource Horizon_Image_Right}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="100" Width="100">
+                            <Image.LayoutTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX=".1" ScaleY=".1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="-180"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Image.LayoutTransform>
+                        </Image>
+                        <Image Margin="8,14,0,0" Source="{DynamicResource Horizon_Image_Right}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="100" Width="100">
+                            <Image.LayoutTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX=".1" ScaleY=".1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Image.LayoutTransform>
+                        </Image>
+                        <Image Margin="8,0,0,0" Source="{DynamicResource Horizon_Image_Right}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="100" Width="100">
+                            <Image.LayoutTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX=".1" ScaleY=".1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="-90"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Image.LayoutTransform>
+                        </Image>
+                    </Canvas>
+            </Button>
+            <Canvas Width="5"/>
+            <Button ToolTip="Line" VerticalAlignment="Center" Name="buttonLine" Click="drawing_button_Click" Padding="5,4,5,4">
+                <Line X1="0" X2="20" Y1="10" Y2="0" Stroke="Black"/>
+            </Button>
+            <Canvas Width="5"/> 
+            <Button ToolTip="Text" VerticalAlignment="Center" Name="buttonText" Click="drawing_button_Click" FontStyle="Italic" FontSize="18" FontWeight="Bold" Padding="5,-2,5,0">A</Button>
+            <Canvas Width="5"/>
+            <Button ToolTip="Image" VerticalAlignment="Center" Name="buttonImage" Click="drawing_button_Click">
+                <Grid>
+                    <Grid.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.045" ScaleY="0.045"/>
+                            <SkewTransform AngleX="0" AngleY="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform X="0" Y="0"/>
+                        </TransformGroup>
+                    </Grid.LayoutTransform>
+                    <Border Width='600' Height='380' BorderThickness="10,10,10,10" CornerRadius="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF1E0606">
+                        <Canvas Name='RedDragon' Width='154.667' Height='101.333'>
+                            <Path Canvas.Left='-154.878' Canvas.Top='-88.2902' Width='327.382' Height='177.192' Stretch='Fill' Fill='#FF000000' Data='M -40.1465,0.736046C -42.7432,6.79186 -45.3173,13.0538 -46.0453,19.6025C -42.4009,20.5132 -38.0593,20.3554 -34.8376,18.4234C -39.8121,25.8813 -50.5422,30.7204 -51.3542,39.6482C -51.088,42.3092 -44.8823,39.6816 -43.6858,37.2899C -43.3409,42.1166 -50.7095,48.4178 -46.9301,51.4397C -43.401,52.9514 -39.0699,53.2428 -35.4275,52.0293C -32.6409,49.9404 -35.4788,43.9376 -38.3769,42.0065C -33.5829,42.0065 -28.6262,48.3043 -24.5148,45.8388C -22.5153,42.9838 -21.2539,39.5487 -20.6806,36.1107C -23.8845,34.1893 -28.7793,34.0392 -31.8883,36.1107C -29.7386,31.2764 -24.1297,26.1029 -18.9109,26.9723C -17.3525,21.5206 -15.0806,16.0699 -11.5375,11.6432C -16.044,9.3911 -23.016,9.55572 -26.5794,13.1172L -25.9895,10.1693L -24.5148,7.51619C -17.5146,0.519524 -8.2712,-3.79871 -0.0348445,-9.28678C -0.828469,-13.2529 -6.95776,-15.2576 -10.9476,-14.593C -3.9786,-21.5585 10.2609,-14.6302 17.9564,-20.7836C 17.9564,-22.6915 17.5286,-24.631 16.7767,-26.3845C 16.4818,-27.0724 16.2842,-27.8108 15.8919,-28.4481C 15.4894,-29.1017 14.9337,-29.6489 14.4172,-30.2168C 9.06168,-36.1049 4.76687,-32.3039 10.8779,-34.0491C 17.1315,-34.7436 25.5856,-30.937 27.3945,-24.9106C 32.1724,-25.5928 37.5293,-27.9525 41.8465,-25.795C 43.754,-30.3706 42.3419,-37.3592 38.3072,-40.2396L 40.6668,-39.9448L 43.3212,-39.3553C 45.7996,-38.4263 48.0948,-36.9502 50.1048,-35.2282C 51.5471,-31.9847 51.459,-28.1344 50.9896,-24.6158C 55.1133,-22.9672 59.6461,-21.5647 62.7872,-18.4252C 66.1818,-20.9699 66.8302,-26.7072 65.7366,-30.8064C 70.5785,-27.3496 73.9637,-20.0696 72.5202,-14.2982C 76.9443,-11.6451 80.7339,-7.35011 85.7924,-6.33888C 88.576,-6.33888 90.5535,-9.55333 91.9861,-11.9399C 94.9199,-6.07524 93.8368,1.99612 98.4748,6.63182C 102.58,6.63182 107.643,6.24763 110.272,3.09435C 110.604,7.39858 110.671,12.7185 107.618,15.7703C 109.975,18.7993 111.994,22.2171 114.991,24.6139C 116.544,25.1311 118.603,23.5128 119.121,21.9608C 123.338,33.5543 129.555,44.7794 130.918,57.0407C 133.624,59.3591 138.674,58.498 140.651,61.4626C 141.748,65.8476 137.827,71.4939 140.651,75.0229C 144.5,75.9846 148.938,70.9907 149.499,67.0636C 152.142,72.7229 148.75,81.4399 153.628,85.3405C 156.188,86.0714 159.211,87.1199 161.592,85.93C 163.856,83.6673 158.069,79.9408 158.642,76.7916C 160.636,74.0015 167.221,75.4576 167.785,72.075C 165.795,69.4223 159.217,73.1165 158.052,70.0114C 155.925,64.3412 148.929,61.6473 143.306,59.399C 136.92,50.8894 127.465,44.907 121.48,36.1107C 120.636,34.8704 119.877,33.5741 119.121,32.2785C 118.5,31.215 117.923,30.1264 117.351,29.0358C 116.841,28.0626 116.275,27.1118 115.876,26.0879C 115.582,25.3327 115.334,24.5385 115.286,23.7296C 115.234,22.8413 115.477,21.9602 115.581,21.0765C 115.786,19.3384 112.852,16.7841 111.452,17.8338C 111.452,14.3716 116.511,12.6436 117.351,9.28493C 116.88,5.52199 114.704,1.50725 111.452,-0.443123C 114.982,-1.03111 120.174,-0.695625 121.775,2.50478C 124.267,-1.23158 122.592,-7.58574 119.415,-10.7607C 122.214,-11.227 125.364,-10.3458 127.674,-8.69721C 128.113,-6.06046 129.04,-3.51448 130.033,-1.03269C 124.595,1.68481 121.708,8.26027 119.71,14.0015L 119.71,20.4869L 122.07,26.6775C 133.33,47.1399 169.924,52.1047 172.505,75.3176C 172.505,80.0235 169.757,85.2785 165.721,87.6988C 160.02,89.8905 153.083,88.8443 147.435,86.5196C 122.441,67.7837 114.374,32.841 92.2811,10.7589C 86.2119,4.99608 80.0748,-0.813698 73.11,-5.45454C 63.8497,-10.0823 53.8885,-13.8991 43.6161,-15.1826C 35.0485,-15.6863 26.188,-14.0271 18.2514,-10.7607C 12.5875,-7.43076 7.56161,-3.02425 2.91456,1.62041C -8.4546,16.7716 -9.35186,38.6586 -22.1553,52.6189C -30.9936,57.2956 -42.366,59.0283 -51.9441,56.1564L -56.0733,52.6189L -58.1378,47.3127C -56.943,31.7883 -52.605,16.1782 -54.5986,0.736046C -56.1147,-4.3152 -58.4382,-9.25166 -61.6771,-13.4138C -72.6655,-25.7695 -84.8621,-39.7687 -100.904,-43.7771C -105.932,-44.1121 -111.912,-42.4054 -115.061,-38.4709C -117.378,-31.5238 -114.969,-22.8557 -110.637,-16.9513C -117.032,-18.9488 -123.146,-21.7837 -129.218,-24.6158C -136.072,-29.0194 -142.536,-34.3735 -147.504,-40.8292C -151.773,-47.7629 -154.426,-55.9875 -154.878,-64.1175L -154.583,-70.0133L -153.698,-75.9091C -150.452,-66.9878 -146.167,-58.3333 -140.721,-50.5572C -135.744,-44.2564 -129.496,-38.4452 -122.14,-35.2282C -127.071,-42.6212 -131.667,-50.3269 -135.117,-58.5165C -137.195,-66.4087 -137.401,-74.9437 -136.002,-82.984C -132.975,-74.9181 -129.574,-66.8626 -124.794,-59.6957C -121.854,-55.8757 -118.16,-52.0809 -113.586,-50.5572C -116.877,-58.1221 -118.895,-66.4803 -118.895,-74.7299C -117.904,-79.6858 -115.686,-84.7173 -112.112,-88.2902C -113.269,-75.5682 -113.304,-58.2304 -102.674,-51.1468C -95.8608,-48.4231 -94.5419,-63.6626 -88.8115,-68.2446C -85.3809,-69.8031 -81.3623,-69.9869 -77.6038,-69.7185C -85.2678,-64.844 -92.527,-56.6365 -93.5305,-47.6094C -90.5402,-44.0228 -85.0019,-42.6471 -82.9127,-38.4709C -79.8544,-37.9151 -75.5259,-40.6814 -75.2443,-43.7771C -69.8666,-38.4021 -70.2991,-28.8117 -64.9214,-23.4367C -61.6138,-24.0377 -58.7277,-28.0342 -58.7277,-31.396C -54.9791,-27.6493 -57.6817,-20.7185 -55.7783,-15.7721C -54.1041,-11.4214 -48.1727,-8.92341 -47.815,-4.27537C -44.6676,-6.07295 -41.9756,-9.12334 -40.7364,-12.5295C -40.063,-8.15477 -39.6575,-3.66306 -40.1465,0.736046 Z '/>
+                            <Path Canvas.Left='97.2951' Canvas.Top='132.212' Width='13.5672' Height='19.1613' Stretch='Fill' Fill='#FF000000' Data='M 101.129,132.212C 106.373,133.522 110.373,139.799 110.862,145.183L 110.272,148.425L 108.503,151.373C 106.5,145.369 98.719,142.212 97.2951,136.044L 97.8849,133.096L 101.129,132.212 Z '/>
+                            <Path Canvas.Left='98.1799' Canvas.Top='160.044' Width='15.3368' Height='19.0393' Stretch='Fill' Fill='#FF000000' Data='M 108.503,160.806C 110.9,163.202 112.694,166.363 113.517,169.65C 113.043,173.437 110.248,177.035 107.028,179.083C 107.624,173.719 99.2389,170.815 98.1799,165.523C 99.5855,162.011 105.548,158.444 108.503,160.806 Z '/>
+                            <Path Canvas.Left='29.754' Canvas.Top='166.09' Width='11.5026' Height='18.5946' Stretch='Fill' Fill='#FF000000' Data='M 31.2287,167.587L 30.0489,169.65L 29.754,172.008C 29.754,176.998 33.5648,181.917 37.7174,184.684C 36.4449,179.597 36.4641,171.484 41.2566,169.355C 39.2194,166.64 32.7473,164.551 31.2287,167.587 Z '/>
+                            <Path Canvas.Left='74.5847' Canvas.Top='188.517' Width='22.1204' Height='13.3213' Stretch='Fill' Fill='#FF000000' Data='M 96.1153,195.002C 94.2711,198.228 90.7593,200.513 87.2671,201.782C 82.8084,202.187 77.9133,200.354 74.5847,197.36C 80.5714,197.36 84.8613,191.193 90.2165,188.517C 92.8904,188.517 95.8592,190.697 96.7052,193.233L 96.1153,195.002 Z '/>
+                            <Path Canvas.Left='-154.878' Canvas.Top='146.362' Width='15.0419' Height='19.1613' Stretch='Fill' Fill='#FF000000' Data='M -139.836,153.142C -142.255,153.948 -144.816,154.877 -146.62,156.679C -147.939,159.317 -147.523,162.828 -146.325,165.523C -150.149,164.249 -153.9,160.885 -154.878,156.974C -154.878,152.667 -151.646,147.545 -147.504,146.362C -144.119,146.785 -140.259,149.756 -139.836,153.142 Z '/>
+                            <Path Canvas.Left='-115.946' Canvas.Top='184.979' Width='25.0698' Height='12.9707' Stretch='Fill' Fill='#FF000000' Data='M -90.8761,189.696C -93.2139,193.98 -98.1449,197.208 -102.969,197.95C -108.379,197.177 -113.634,192.88 -115.946,187.927C -112.956,189.587 -109.606,190.746 -106.213,191.17C -102.164,189.821 -99.2731,184.979 -95.0052,184.979C -93.3333,186.232 -91.5371,187.714 -90.8761,189.696 Z '/>
+                            <Path Canvas.Left='-82.0279' Canvas.Top='164.191' Width='17.6963' Height='11.3257' Stretch='Fill' Fill='#FF000000' Data='M -64.3316,166.702C -64.7273,169.867 -67.0449,172.809 -69.6404,174.662C -73.5623,175.968 -78.2643,175.782 -82.0279,174.072C -77.6446,172.977 -75.91,167.349 -72.2949,164.639C -69.7487,163.621 -65.7429,164.351 -64.3316,166.702 Z '/>
+                            <Path Canvas.Left='-76.719' Canvas.Top='132.507' Width='12.9773' Height='13.5603' Stretch='Fill' Fill='#FF000000' Data='M -72.8848,132.507C -69.1093,132.884 -64.7845,135.639 -63.7417,139.287C -64.058,141.817 -65.4778,144.265 -67.2809,146.067C -68.3435,141.819 -75.5154,141.139 -76.719,136.929C -76.443,134.997 -74.6781,133.275 -72.8848,132.507 Z '/>
+                            <Path Canvas.Left='227.363' Canvas.Top='22.5504' Width='12.1394' Height='19.5499' Stretch='Fill' Fill='#FF000000' Data='M 239.456,37.8794C 240.048,34.3295 234.872,32.2545 233.262,29.0358L 233.557,26.3827L 235.621,22.5504C 231.638,23.5457 227.817,27.6083 227.363,31.6889C 227.363,35.2659 228.404,39.4778 231.197,41.7117C 233.912,43.0683 238.223,40.6524 239.456,37.8794 Z '/>
+                            <Path Canvas.Left='256.562' Canvas.Top='1.62041' Width='21.2356' Height='15.5729' Stretch='Fill' Fill='#FF000000' Data='M 266,16.9494C 265.289,14.1055 266.36,10.7856 268.065,8.40056C 270.824,6.4309 274.408,5.45266 277.798,5.45266C 275.524,3.1805 272.164,1.62041 268.95,1.62041C 263.969,3.27992 258.005,6.30043 256.562,11.3484C 257.08,14.9699 262.529,18.1058 266,16.9494 Z '/>
+                            <Path Canvas.Left='289.005' Canvas.Top='7.2214' Width='20.3508' Height='18.2769' Stretch='Fill' Fill='#FF000000' Data='M 294.019,18.7182L 295.494,17.539L 297.559,16.9494L 299.918,16.6546L 302.278,17.2442L 304.342,18.4234L 306.407,20.1921L 307.587,22.5504L 308.176,25.4983L 309.356,21.6661L 309.356,18.1286L 308.176,14.8859L 306.112,12.5276L 303.163,10.4641L 300.213,8.99014L 296.674,7.81097L 293.43,7.2214L 290.185,8.10577L 289.005,11.6432L 290.185,15.7703L 294.019,18.7182 Z '/>
+                            <Path Canvas.Left='282.517' Canvas.Top='79.0744' Width='21.5305' Height='15.7977' Stretch='Fill' Fill='#FF000000' Data='M 291.365,79.1499C 291.052,81.9687 291.424,85.399 293.43,87.404C 296.252,89.7548 300.374,90.3519 304.047,90.3519C 301.476,94.4642 295.019,95.1763 290.185,94.7737C 286.631,93.3526 283.569,89.9055 282.517,86.2248C 282.517,82.4485 287.649,78.4747 291.365,79.1499 Z '/>
+                            <Path Canvas.Left='-155.173' Canvas.Top='-41.124' Width='365.135' Height='236.126' Stretch='Fill' Fill='#FFCC0000' Data='M -84.6823,76.7916C -83.4363,75.9613 -82.0059,75.3858 -80.5532,75.0229C -88.0767,70.1888 -90.4698,59.194 -90.8761,50.2606C -89.7852,37.722 -84.0925,25.7031 -84.0925,13.1172L -85.2722,7.2214L -88.2216,1.32561C -95.1628,-6.91285 -107.358,-11.3191 -111.227,-21.3731C -112.382,-25.4126 -113.287,-29.5636 -113.586,-33.7543C -112.372,-37.3955 -108.402,-39.9796 -104.738,-41.124C -97.5031,-40.1598 -90.8955,-35.9628 -84.9773,-31.6907C -76.6594,-23.8967 -67.4124,-16.7061 -61.0872,-7.22325C -58.2495,-0.920364 -56.6023,5.95943 -55.7783,12.8224C -56.1738,23.4938 -59.5515,33.8441 -61.3822,44.3648C -60.2391,50.3628 -56.305,56.1201 -51.3542,59.6938C -49.1913,60.4799 -47.1356,61.674 -44.8656,62.0521C -42.3442,62.4722 -39.7533,62.0521 -37.1972,62.0521C -34.5427,61.266 -31.7284,60.8943 -29.2338,59.6938C -26.3596,58.3106 -23.9249,56.1564 -21.2705,54.3876C -6.53512,38.8416 -4.71441,13.9286 9.69816,-1.91706C 18.8025,-8.74183 30.7631,-12.5295 42.1414,-12.5295C 50.6711,-11.5265 59.1446,-9.10993 66.9163,-5.45454C 75.2589,-1.04014 82.7875,4.87392 89.9216,11.0537C 111.267,34.0295 119.118,69.2592 144.485,87.6988C 151.277,91.0931 159.992,91.8675 167.196,89.4675C 171.743,86.6267 174.274,80.3848 174.274,75.0229C 170.569,52.8044 139.39,46.0319 125.314,28.4462C 122.994,23.8084 122.087,18.2712 122.66,13.1172C 125.018,7.61806 128.902,1.10475 134.752,-0.148323C 150.889,6.1238 160.674,22.8812 172.505,35.5211C 181.182,44.7922 192.955,50.7845 201.703,59.9886C 205.826,66.5809 209.053,74.0812 209.962,81.803C 209.337,92.414 205.632,103.301 199.344,111.871C 192.823,119.391 184.184,125.476 174.864,128.969C 160.61,132.321 146.038,137.86 131.508,136.044C 124.654,134.76 117.789,132.329 112.042,128.38C 105.252,122.498 99.8393,114.894 95.8204,106.86C 92.4949,111.513 85.3047,111.378 80.1886,113.935C 80.1886,128.35 69.3504,142.202 71.9303,156.385C 73.8184,158.649 76.2147,152.074 77.2392,149.31C 80.3437,140.932 85.555,130.272 94.3456,128.674L 97.59,129.559L 101.129,132.212C 97.4125,133.225 100.705,139.931 99.9495,143.709C 97.346,148.913 91.2929,151.72 86.0874,154.321C 87.1039,155.591 87.7572,157.165 88.1519,158.743C 91.1773,154.207 97.5347,150.693 102.899,151.668C 105.872,153.649 107.802,157.303 108.503,160.806C 105.435,158.353 102.31,166.145 98.4748,166.997C 94.0052,167.99 87.9506,166.872 85.2026,170.534C 86.0943,177.665 98.2279,178.109 101.719,184.39C 102.161,188.365 99.4443,192.784 96.1153,195.002C 97.0488,192.203 91.3574,191.065 88.4469,190.58C 83.364,189.733 84.0502,180.5 79.5987,177.904C 73.343,176.461 64.0862,175.786 62.1973,169.65C 58.3419,169.65 55.0249,172.548 51.2845,173.482C 48.5122,172.79 46.2429,170.775 43.6161,169.65C 39.7683,168.002 33.1015,163.843 31.2287,167.587C 29.3116,165.123 27.702,162.322 26.8046,159.332C 26.8046,155.663 27.8525,151.402 30.6388,149.015C 34.1582,147.416 38.3912,146.604 42.1414,147.541C 45.0082,149.26 46.2706,153.337 46.2706,156.679C 51.0696,155.48 51.0815,145.969 56.0036,145.477C 53.3392,134.065 54.3916,121.424 58.3631,110.398L 54.5289,107.45L 53.3491,103.028C 54.498,98.7219 59.0452,96.1554 62.1973,93.005C 57.3174,85.6889 51.1567,76.2905 53.939,67.9479C 56.8332,73.1548 62.1389,78.8551 68.0961,78.8551C 64.7942,72.2547 64.0079,63.5289 66.9163,56.7459C 69.7095,62.3295 76.3675,66.181 82.5481,67.0636L 81.3683,62.3469L 81.9582,58.8095L 84.0228,57.0407L 87.5621,57.3355C 84.8715,49.268 79.6384,41.8959 73.405,36.1107C 66.2412,30.8599 58.288,26.3777 49.8099,23.7296C 43.7177,23.0132 37.1622,23.3778 31.5236,25.7931C 26.0189,29.9195 22.4318,36.2623 19.1362,42.3013C 14.4082,55.2967 26.2531,69.4625 25.6249,83.2769C 24.0987,91.6665 19.8584,99.9476 13.8273,105.976C 3.46107,111.896 -8.31513,115.511 -20.0907,117.472C -24.4129,117.472 -29.2246,116.486 -32.4781,113.64C -36.7756,119.546 -44.6022,122.332 -51.6492,124.253C -59.7523,124.928 -69.2985,123.609 -75.2443,118.062C -82.9978,121.291 -89.9495,126.569 -95.89,132.507L -99.1344,136.634L -100.609,141.056C -100.401,143.965 -98.7377,147.793 -95.89,148.425C -90.4214,146.083 -92.0592,137.082 -89.1064,131.917C -85.8681,128.68 -80.0027,126.486 -75.8342,128.38L -72.8848,132.507C -78.6305,134.968 -78.7911,144.229 -84.0925,147.541C -80.7373,147.541 -78.5405,154.347 -75.5392,152.847C -72.4676,151.312 -68.8005,149.503 -65.5113,150.489C -62.8359,152.569 -61.0547,155.99 -60.4973,159.332L -61.3822,163.165L -64.3316,166.702C -66.6136,162.901 -73.2302,166.858 -77.6038,167.587C -81.8013,166.987 -85.8267,162.882 -86.7469,158.743C -89.5799,160.867 -94.0056,160.157 -97.3647,159.038C -93.9123,162.223 -95.338,168.262 -93.5305,172.598C -91.925,176.449 -86.1147,177.349 -84.3874,181.147C -84.1182,183.837 -84.8785,187.19 -87.0419,188.811C -92.9795,190.181 -99.3167,186.504 -104.443,183.21C -106.205,180.444 -105.04,176.642 -105.918,173.482C -108.132,165.518 -117.716,159.935 -117.716,151.668C -124.132,148.003 -134.158,148.413 -139.836,153.142C -140.183,150.37 -142.577,147.757 -145.145,146.657C -147.809,146.324 -151.186,147.568 -152.518,149.899L -154.878,146.657L -155.173,143.119C -153.27,138.174 -148.276,133.84 -143.08,132.801C -135.775,134.749 -127.251,142.005 -120.96,137.813C -120.96,131.685 -120.069,124.659 -115.946,120.126C -120.475,118.768 -125.341,115.034 -126.269,110.398C -119.49,111.013 -111.027,111.377 -106.213,106.565C -111.701,103.822 -115.946,97.0773 -115.946,90.9415C -109.856,95.2889 -100.368,95.1581 -93.5305,92.1206C -96.9155,91.444 -100.454,90.5889 -103.263,88.5831C -105.011,86.3997 -105.369,83.3662 -105.918,80.6238C -99.2352,78.954 -91.6682,78.9511 -85.2722,81.5082C -85.9811,80.0912 -85.5615,78.1097 -84.6823,76.7916 Z '/>
+                            <Path Canvas.Left='195.51' Canvas.Top='4.3916' Width='98.5096' Height='115.693' Stretch='Fill' Fill='#FFCC0000' Data='M 283.991,90.0571C 282.748,87.5714 282.418,84.5544 282.812,81.803C 284.468,79.3196 288.428,78.6162 291.365,79.1499C 291.686,74.9782 293.151,70.9435 293.43,66.7688C 285.837,56.4206 292.883,39.7133 285.761,29.0358C 286.656,25.4565 292.188,24.869 294.019,21.6661C 294.019,17.9304 289.005,15.3789 289.005,11.6432C 289.005,-2.66096 295.958,9.49553 290.48,4.56829C 286.379,3.7485 281.591,6.31453 278.978,9.5797C 275.854,16.4486 275.356,24.4472 275.733,31.9837C 270.832,30.0241 270.685,22.7111 268.065,18.1286C 264.98,16.3666 260.255,17.987 257.742,15.4755C 256.728,13.1118 256.808,9.62905 258.627,7.81097L 254.792,7.51619L 251.843,9.5797C 249.932,13.0824 249.251,17.416 249.779,21.3713C 252.307,27.4354 257.166,32.2393 260.986,37.5847C 252.346,35.8574 243.391,39.8109 235.032,42.5961C 232.22,42.5961 229.293,40.1947 228.248,37.5847L 226.183,42.8909L 226.478,47.0179C 231.994,54.8933 244.684,53.6181 254.203,54.9772C 258.126,54.417 261.229,49.4838 265.115,50.2606L 264.82,52.3241L 263.641,54.6824C 257.25,61.0703 248.731,65.1831 240.34,68.5375C 230.243,71.9016 219.72,75.0229 209.077,75.0229C 209.906,82.0662 209.408,89.3894 207.602,96.2477C 204.773,103.52 200.836,110.59 195.51,116.293C 199.594,118.935 204.897,120.784 209.667,119.831C 215.678,117.256 220.942,112.281 224.119,106.565C 226.136,110.598 227.411,115.367 226.773,119.831C 232.231,115.467 234.767,107.858 235.916,100.964C 239.713,104.759 242.405,110.336 242.405,115.704C 247.626,109.442 248.291,100.251 248.894,92.1206C 252.856,95.6847 255.087,101.531 255.087,106.86C 258.116,100.806 258.332,93.5832 258.332,86.8144C 269.158,82.8798 268.282,63.3802 278.978,59.1043C 286.557,60.9983 275.46,74.6274 276.323,82.3926C 277.791,85.6948 280.607,88.7887 283.991,90.0571 Z '/>
+                            <Path Canvas.Left='-116.536' Canvas.Top='-43.7058' Width='290.81' Height='134.44' Stretch='Fill' Fill='#FFD8A53F' Data='M 130.623,0.736046C 128.854,2.79958 126.785,4.64028 125.314,6.92662C 124.1,8.81496 123.545,11.0537 122.66,13.1172C 122.087,18.2712 122.994,23.8084 125.314,28.4462C 137.701,43.9211 157.01,52.4616 171.03,66.474C 172.989,69.8314 173.976,73.8 174.274,77.676C 173.807,82.8077 170.117,88.2205 165.426,90.3519C 158.879,91.2867 152.014,90.434 145.665,88.5831C 119.392,70.6157 111.586,34.3728 89.9216,11.0537C 82.7875,4.87392 75.2589,-1.04014 66.9163,-5.45454C 59.1446,-9.10993 50.6711,-11.5265 42.1414,-12.5295C 30.7631,-12.5295 18.8025,-8.74183 9.69816,-1.91706C -4.71441,13.9286 -6.53512,38.8416 -21.2705,54.3876C -23.9249,56.1564 -26.3596,58.3106 -29.2338,59.6938C -31.7284,60.8943 -34.5427,61.266 -37.1972,62.0521C -39.7533,62.0521 -42.3442,62.4722 -44.8656,62.0521C -47.1356,61.674 -49.1913,60.4799 -51.3542,59.6938C -56.305,56.1201 -60.2391,50.3628 -61.3822,44.3648C -59.5515,33.8441 -56.1738,23.4938 -55.7783,12.8224C -56.8453,3.93568 -59.6599,-5.08335 -64.6265,-12.5295C -75.3216,-23.2191 -86.0541,-35.504 -100.314,-40.5344C -105.239,-41.1907 -112.015,-38.467 -113.586,-33.7543C -113.116,-27.1689 -111.025,-20.7225 -108.572,-14.593L -108.572,-14.593C -112.769,-18.7873 -115.372,-24.6938 -116.536,-30.5116C -116.279,-34.3569 -115.11,-38.41 -112.702,-41.4188C -108.368,-44.1751 -102.347,-44.1377 -97.3647,-42.8927C -84.1134,-36.2704 -73.5646,-25.1248 -62.8569,-14.8878C -58.4562,-8.56502 -55.2253,-1.21668 -53.7137,6.33703C -53.205,20.0655 -57.0836,33.6153 -58.1378,47.3127C -56.1932,52.3107 -51.1823,56.3848 -46.0453,57.9251C -36.543,58.3774 -25.3409,56.0924 -18.9109,49.0814C -11.8726,38.1385 -9.91358,24.6348 -4.45892,12.8224C 0.912253,4.61184 7.13718,-3.55156 15.302,-8.99199C 23.3528,-13.252 32.7381,-15.4773 41.8465,-15.4773C 50.7524,-14.4302 59.5231,-11.8499 67.8011,-8.40241C 83.1857,-0.714066 94.7321,13.193 106.438,25.7931C 118.658,42.0781 125.723,61.8026 137.702,78.2655C 143.155,83.395 149.809,88.0885 157.168,89.4675C 161.171,89.2174 165.23,87.9931 168.67,85.93C 171.685,82.4866 172.715,77.213 172.21,72.6645C 164.914,53.2199 137.639,48.4779 125.019,31.9837C 121.791,26.1161 119.714,19.2185 120.005,12.5276C 120.988,10.2675 121.489,7.72908 122.955,5.74745C 124.897,3.12045 127.268,0.707535 130.033,-1.03269C 130.591,-1.3838 130.71,0.11068 130.918,0.736046L 130.623,0.736046 Z '/>
+                            <Path Canvas.Left='-106.213' Canvas.Top='60.8291' Width='109.717' Height='87.891' Stretch='Fill' Fill='#FFD8A53F' Data='M -25.9895,69.1271C -24.7655,64.2339 -18.326,60.3713 -13.3071,60.873C -8.25471,64.0291 -2.99914,67.2335 0.849982,71.7802L 2.91456,76.202L 3.50443,81.5082C 2.1478,87.6099 -3.46237,91.9505 -7.70326,96.5424C -12.255,101.471 -12.8042,109.823 -18.3211,113.64C -23.1312,114.922 -28.6623,113.6 -33.068,111.282C -38.9455,117.156 -47.1043,120.855 -55.1884,122.779C -64.0311,122.779 -73.3097,115.465 -81.438,118.946C -88.7262,122.831 -96.0446,127.597 -100.904,134.275C -102.567,138.846 -101.015,144.37 -98.8394,148.72C -103.228,148.72 -105.815,142.183 -106.213,137.813C -105.287,132.258 -101.938,127.055 -97.9546,123.073C -91.8083,118.978 -85.4791,114.264 -78.1937,113.051C -77.9454,109.577 -77.3345,105.813 -75.2443,103.028C -73.2856,102.375 -70.7687,101.883 -69.0506,103.028C -69.8627,106.275 -70.9594,109.975 -69.6404,113.051C -67.4157,115.719 -63.6623,117.158 -60.2024,117.472C -51.2646,116.728 -41.2322,112.978 -36.0174,105.681C -30.5193,109.485 -21.6031,109.564 -15.9615,105.976C -13.7747,102.541 -16.2128,97.4242 -14.1919,93.8894C -11.0895,88.4629 -2.98423,85.1058 -2.98423,78.8551C -4.98617,72.8523 -10.1449,67.4916 -15.9615,65C -19.5399,64.4891 -23.2872,66.7263 -25.9895,69.1271 Z '/>
+                            <Path Canvas.Left='67.5062' Canvas.Top='60.786' Width='93.4957' Height='94.7143' Stretch='Fill' Fill='#FFD8A53F' Data='M 159.822,99.1955C 158.679,101.195 155.398,102.199 155.398,104.502C 158.105,107.208 160.251,110.771 161.002,114.525C 160.783,120.214 159.183,126.799 154.808,130.443C 146.413,133.59 136.813,133.685 127.969,132.212C 119.854,130.184 112.774,124.929 106.143,119.831C 101.649,114.89 98.398,108.907 95.2305,103.028C 91.3212,107.493 84.2427,107.696 79.3038,110.987C 77.2828,117.047 81.3376,124.2 79.0088,130.148C 75.7687,138.424 70.7505,146.613 70.7505,155.5C 68.7548,152.841 68.0121,149.353 67.5062,146.067C 68.3738,133.059 71.1419,120.233 73.6999,107.45C 78.0001,103.152 85.7114,104.106 90.5115,100.375C 92.9651,98.4673 93.0403,94.0995 95.8204,92.7102C 99.5279,97.3423 101.373,103.208 103.784,108.629C 108.541,114.115 114.187,119.068 120.595,122.484C 124.606,123.82 130.82,119.044 133.278,122.484C 134.577,119.02 136.799,114.951 140.356,113.935C 143.598,116.365 135.159,122.356 137.407,125.727C 142.248,127.985 149.7,126.36 153.039,122.189C 154.59,117.925 154.885,112.009 151.859,108.629C 150.143,106.712 145.351,105.731 146.255,103.323C 147.427,100.199 150.384,96.4237 148.614,93.5946C 143.852,88.8342 137.934,85.1779 131.803,82.3926C 126.487,80.7578 120.835,79.6645 115.286,80.0343C 115.286,74.4025 111.427,68.8119 107.028,65.2948C 101.468,64.8674 96.0876,67.9479 90.5115,67.9479C 93.611,65.6245 96.7259,63.3157 99.9495,61.1678C 107.14,58.7721 113.754,68.2115 118.826,73.8437C 123.382,78.9035 132.201,76.9905 138.292,80.0343C 141.859,82.5812 143.28,87.685 147.14,89.7623C 151.779,92.2592 159.822,93.9269 159.822,99.1955 Z '/>
+                            <Path Canvas.Left='209.962' Canvas.Top='55.5668' Width='58.103' Height='47.1662' Stretch='Fill' Fill='#FFD8A53F' Data='M 266.295,55.5668C 260.741,62.2281 252.818,66.7239 245.06,70.601C 233.565,73.8836 221.824,79.4527 209.962,77.9707C 209.962,81.9817 217.9,81.4586 219.695,85.0457C 217.955,87.6543 216.084,90.2007 214.681,93.005C 214.337,93.6915 213.609,94.1201 213.206,94.7737C 212.814,95.411 212.635,96.1578 212.321,96.8372C 211.488,98.6414 211.219,102.733 213.206,102.733C 218.213,95.7269 224.701,89.7757 229.133,82.3926C 241.888,73.8935 263.216,72.4652 268.065,57.9251L 267.77,56.4511L 266.295,55.5668 Z '/>
+                            <Path Canvas.Left='89.6266' Canvas.Top='-93.0068' Width='173.719' Height='160.955' Stretch='Fill' Fill='#FFCC0000' Data='M 206.717,-16.9513C 211.245,-31.6582 230.607,-41.065 230.607,-56.453C 235.327,-55.2739 241.936,-56.0331 244.765,-59.9905C 238.3,-59.9905 233.601,-66.5834 227.658,-69.1289C 219.085,-72.8012 208.875,-72.8012 201.114,-77.9726C 200.234,-83.248 199.619,-89.584 195.51,-93.0068C 197.523,-86.1668 189.665,-78.1587 192.855,-71.782C 188.316,-73.2941 180.839,-73.7023 178.698,-69.4237C 183.997,-66.5352 192.717,-60.1529 189.611,-54.9791C 183.74,-51.4582 175.771,-53.4248 169.555,-50.5572C 166.733,-49.2554 167.156,-43.9835 164.246,-42.8927C 158.22,-40.6342 148.351,-42.6767 145.96,-36.7022C 142.421,-38.6315 138.169,-39.8001 134.162,-39.3553C 123.747,-36.7528 113.682,-32.6575 104.079,-27.8585C 97.3483,-21.8042 92.4907,-13.4526 89.6266,-4.86494C 100.654,-10.8768 112.852,-15.3943 125.314,-16.9513C 133.738,-13.7938 129.943,0.909935 135.342,8.10577C 139.712,11.9277 144.986,15.2219 150.679,16.3599C 152.768,22.6235 141.083,25.4703 136.817,30.5097C 129.816,42.4057 130.958,60.8489 119.121,67.9479C 133.72,65.2949 145.173,53.7002 157.758,45.8388C 162.622,41.5841 165.838,35.1159 166.901,28.741C 173.496,30.9383 180.648,24.9313 187.546,25.7931C 189.85,26.7798 192.357,28.4273 193.15,30.8045C 193.15,33.1404 191.898,35.4215 190.496,37.2899L 192.855,37.2899L 195.215,36.9951C 198.126,36.1636 201.03,34.2851 202.588,31.6889C 203.302,28.1236 201.321,24.2099 199.049,21.3713C 202.742,21.9864 208.287,22.0662 209.962,18.7182C 210.606,23.8675 214.581,29.1729 219.4,31.0993C 219.196,27.2273 219.245,22.9686 221.169,19.6025C 223.964,18.2058 228.279,19.9107 230.313,17.539C 231.142,15.0517 230.591,11.512 228.543,9.8745L 235.032,10.1693L 240.635,9.28493C 248.626,5.55794 254.918,-1.68364 263.346,-4.27537C 257.189,-6.32658 250.369,-3.98058 243.88,-3.98058C 241.599,-4.89253 245.987,-10.0869 243.88,-11.3503C 240.174,-11.3503 236.451,-9.53749 233.557,-7.22325C 232.388,-11.3125 227.11,-13.4645 222.939,-14.2982C 224.332,-11.236 225.183,-7.46657 224.119,-4.27537C 220.029,-3.45777 213.281,-2.17168 211.731,-6.04411C 210.597,-1.79252 209.804,3.22609 206.422,6.04225C 204.664,6.70146 202.382,7.67333 200.819,6.63182C 202.193,3.19643 204.054,-0.765144 202.883,-4.27537C 199.259,0.0713654 190.664,4.7368 186.662,0.736046C 186.288,-1.50175 187.308,-3.97813 188.726,-5.74931C 193.703,-8.73417 200.398,-6.95509 205.833,-8.99199C 209.316,-10.7329 210.68,-15.205 213.796,-17.5409C 221,-19.9409 229.303,-16.9096 236.506,-19.3096C 241.236,-23.2488 244.703,-28.5623 248.009,-33.7543C 241.295,-30.7718 234.775,-27.3431 227.953,-24.6158C 223.67,-24.6158 219.452,-27.608 215.271,-26.6793C 211.408,-24.7491 208.649,-20.8129 206.717,-16.9513 Z '/>
+                            <Path Canvas.Left='222.349' Canvas.Top='-53.6586' Width='48.665' Height='20.4939' Stretch='Fill' Fill='#FF000000' Data='M 222.349,-39.0605C 230.343,-47.0498 242.44,-49.5386 253.023,-53.5051C 257.456,-53.9079 262.112,-53.5517 266.295,-52.0312C 268.797,-50.0861 270.493,-46.9032 271.014,-43.7771C 269.897,-39.309 266.634,-34.2812 262.166,-33.1647C 259.171,-33.1647 255.649,-34.2657 253.908,-36.7022C 253.606,-39.1143 253.732,-42.319 255.677,-43.7771C 257.421,-42.0348 256.655,-38.4752 258.627,-36.9969C 260.806,-36.4525 263.664,-37.7244 264.82,-39.65C 265.477,-43.5867 261.343,-48.2179 257.447,-49.0833C 245.33,-47.9823 234.308,-36.8194 222.349,-39.0605 Z '/>
+                            <Path Canvas.Left='148.909' Canvas.Top='-100.62' Width='40.7016' Height='32.375' Stretch='Fill' Fill='#FF000000' Data='M 189.611,-72.6664C 179.958,-74.5959 170.256,-68.2446 160.412,-68.2446C 154.43,-70.4866 149.754,-77.2414 148.909,-83.5736C 149.755,-88.6458 152.056,-93.7935 155.693,-97.4287C 160.872,-100.387 167.557,-101.331 173.389,-100.082C 177.558,-97.9985 180.515,-91.9019 179.288,-87.4059C 177.52,-86.0808 175.261,-84.6145 173.094,-85.0475C 172.449,-87.6284 175.054,-90.7259 173.684,-93.0068C 171.705,-94.9847 168.502,-95.9688 165.721,-95.66C 161.067,-93.7994 157.659,-87.309 158.642,-82.3944C 165.137,-73.7399 184.241,-82.0598 189.611,-72.6664 Z '/>
+                            <Path Canvas.Left='148.614' Canvas.Top='28.1164' Width='20.6458' Height='22.1201' Stretch='Fill' Fill='#FFD8A53F' Data='M 148.614,49.671C 152.702,48.3091 157.07,46.8211 160.117,43.7752C 160.856,43.0366 161.547,42.2467 162.182,41.4169C 162.828,40.5726 163.456,39.7044 163.951,38.7638C 164.444,37.8273 164.769,36.8105 165.131,35.8159C 169.27,24.4406 166.525,28.4595 169.26,30.5097C 168.076,36.4266 164.385,41.8678 160.117,46.1335C 156.984,48.6387 152.203,51.4642 148.614,49.671 Z '/>
+                            <Path Canvas.Left='95.2305' Canvas.Top='-30.3852' Width='41.8813' Height='17.2662' Stretch='Fill' Fill='#FFD8A53F' Data='M 135.047,-25.2054C 131.791,-27.2394 127.64,-28.4012 123.84,-27.8585C 113.662,-24.4677 101.669,-21.6996 95.2305,-13.119C 100.103,-22.8588 113.508,-25.0536 123.25,-29.922C 127.863,-30.8442 133.784,-30.5947 137.112,-27.2689C 136.424,-26.5811 135.483,-26.0756 135.047,-25.2054 Z '/>
+                            <Path Canvas.Left='125.609' Canvas.Top='25.4983' Width='35.0977' Height='40.0913' Stretch='Fill' Fill='#FFD8A53F' Data='M 158.052,25.4983C 152.014,33.0423 141.908,37.1553 137.112,45.544C 133.288,52.2319 131.529,60.6593 125.609,65.5896C 132.437,62.1775 134.351,53.0731 138.587,46.7231C 144.072,38.4996 154.53,34.6896 160.707,26.9723C 159.747,26.6524 158.768,26.2138 158.052,25.4983 Z '/>
+                            <Path Canvas.Left='165.426' Canvas.Top='-49.1783' Width='16.8115' Height='17.1928' Stretch='Fill' Fill='#FFFFFFFF' Data='M 179.583,-47.3146L 181.353,-44.6615L 182.237,-41.124C 182.237,-37.3303 179.209,-32.5218 175.454,-31.9855C 171.419,-31.9855 166.979,-35.0414 165.426,-38.7657C 165.426,-42.1599 166.544,-46.1631 169.26,-48.1989C 172.349,-49.7428 176.886,-49.4713 179.583,-47.3146 Z '/>
+                            <Path Canvas.Left='178.108' Canvas.Top='-26.9741' Width='17.6964' Height='16.2979' Stretch='Fill' Fill='#FFFFFFFF' Data='M 193.74,-23.7314L 194.92,-21.0783L 195.805,-18.1304C 194.959,-13.9059 189.437,-10.0528 185.187,-10.7607C 181.239,-12.3392 178.578,-17.147 178.108,-21.3731C 179.086,-23.9793 181.661,-26.0943 184.302,-26.9741C 187.629,-26.9741 191.744,-26.3922 193.74,-23.7314 Z '/>
+                            <Path Canvas.Left='76.3544' Canvas.Top='-8.69721' Width='53.6789' Height='28.5945' Stretch='Fill' Fill='#FF000000' Data='M 127.674,-8.69721C 128.667,-6.21541 129.04,-3.51448 130.033,-1.03269C 115.786,7.27395 100.849,14.6845 85.2026,19.8973C 81.5955,19.2965 77.0719,16.9977 76.3544,13.412C 77.1874,9.2488 85.1408,13.9202 89.0368,12.2328C 102.478,6.41145 115.062,-1.24851 127.674,-8.69721 Z '/>
+                            <Path Canvas.Left='95.8204' Canvas.Top='9.8745' Width='50.7295' Height='45.4222' Stretch='Fill' Fill='#FF000000' Data='M 137.702,9.8745C 140.248,12.4191 143.058,15.1924 146.55,16.0651C 130.871,26.5125 120.629,43.6763 105.553,54.9772C 102.136,56.2579 96.7058,53.5059 95.8204,49.9658C 96.1082,47.6642 97.7775,45.1789 99.9495,44.3648C 112.508,49.7445 100.116,51.1325 104.963,47.9023C 109.679,42.5159 114.707,37.3875 120.005,32.5732C 121.704,31.0302 123.396,29.4787 125.019,27.8566C 126.642,26.2346 128.167,24.5172 129.738,22.8452C 131.215,21.2745 132.809,19.8062 134.162,18.1286C 136.042,15.7988 140.38,11.2127 137.702,9.8745 Z '/>
+                            <Path Canvas.Left='169.85' Canvas.Top='-43.0879' Width='8.55322' Height='4.18431' Stretch='Fill' Fill='#FF000000' Data='M 169.85,-41.4188C 170.757,-44.1378 177.708,-43.315 178.403,-40.5344C 177.121,-37.971 169.85,-38.5525 169.85,-41.4188 Z '/>
+                            <Path Canvas.Left='184.302' Canvas.Top='-22.0993' Width='6.78366' Height='4.81828' Stretch='Fill' Fill='#FF000000' Data='M 184.892,-21.3731C 186.671,-22.4397 189.79,-22.4027 191.086,-20.7836C 191.086,-18.3556 185.388,-15.959 184.302,-18.1304C 184.302,-19.2291 184.282,-20.4592 184.892,-21.3731 Z '/>
+                        </Canvas>
+                    </Border>
+                </Grid>
+            </Button>
+            <Canvas Width="5"/>
+            <Button ToolTip="Ellipse" VerticalAlignment="Center" Name="buttonEllipse" Click="drawing_button_Click" Padding="5,4,5,4">
+                <Ellipse Width="18" Height="12" Fill="AntiqueWhite" Stroke="{x:Null}" Opacity=".8"></Ellipse>
+            </Button>
+            <Canvas Width="5"/>
+            <Button ToolTip="Rectangle" VerticalAlignment="Center" Name="buttonRect" Click="drawing_button_Click" Padding="5,4,5,4">
+                <Rectangle Width="20" Height="10" Fill="AntiqueWhite" Stroke="{x:Null}" Opacity=".8"></Rectangle>
+            </Button>
+            <Canvas Width="5"/>
+            <Button ToolTip="Tile" VerticalAlignment="Center" Name="buttonTile" Click="drawing_button_Click" Padding="5,4,5,4">
+                <l:Tile Width="40" Height="40" Opacity=".8">
+                    <l:Tile.LayoutTransform>
+                        <ScaleTransform ScaleX=".33" ScaleY=".33"/>
+                    </l:Tile.LayoutTransform>
+                </l:Tile>
+            </Button>
+            <Canvas Width="5"/>
+            <Button ToolTip="Half Round Tile" VerticalAlignment="Center" Name="buttonHalfArc" Click="drawing_button_Click" Padding="5,4,5,4">
+                <l:HalfArcTile Width="24" Height="12" Opacity=".8"/>
+            </Button>
+            
+            <Canvas Width="5"/>
+            <Button ToolTip="Quarter Round Tile" VerticalAlignment="Center" Name="buttonQuarterArc" Click="drawing_button_Click" Padding="5,4,5,4">
+                <l:QuarterArcTile Width="12" Height="12" Opacity=".8"/>
+            </Button>
+
+            <Canvas Width="10"/>
+            <Button ToolTip="Hard Snap" VerticalAlignment="Center" Name="buttonHardSnap" Click="buttonHardSnap_Click" Padding="5,4,5,4">
+                <Grid>
+                    <Line X1="0" X2="20" Y1="5" Y2="5" StrokeThickness="2" Stroke="Black"/>
+                    <Line X1="0" X2="20" Y1="10" Y2="10" StrokeThickness="2" Stroke="Black"/>
+                    <Line X1="5" X2="5" Y1="0" Y2="15" StrokeThickness="2" Stroke="Black"/>
+                    <Line X1="15" X2="15" Y1="0" Y2="15" StrokeThickness="2" Stroke="Black"/>
+                </Grid>
+            </Button>
+
+            <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" Name="fontSampleText">Font Sample</TextBlock>
+            <Button Margin="5,0,0,0" VerticalAlignment="Center" Name="buttonChangeFont" Click="buttonChangeFont_Click">Change</Button>
+            <Button Margin="2,0,0,0" VerticalAlignment="Center" Name="buttonGive" Click="drawing_button_Click">Give to Main</Button>
+            
+        </StackPanel>
+        <Canvas Height="1" DockPanel.Dock="Top" Background="{DynamicResource NormalBrush}"/>
+        <Slider DockPanel.Dock="Left" Orientation="Vertical" Width="Auto" Name="zoomSlider"  ValueChanged="scrollZoom_ValueChanged" Value="5"/>
+        <StackPanel DockPanel.Dock="Left" Orientation="Vertical">
+            <Button Click="layer_Click" ToolTip="Background"   ><Button.LayoutTransform><ScaleTransform ScaleX=".75" ScaleY=".75"/></Button.LayoutTransform>0</Button>
+            <Button Click="layer_Click" ToolTip="Rect"         ><Button.LayoutTransform><ScaleTransform ScaleX=".75" ScaleY=".75"/></Button.LayoutTransform>1</Button>
+            <Button Click="layer_Click" ToolTip="Spare"        ><Button.LayoutTransform><ScaleTransform ScaleX=".75" ScaleY=".75"/></Button.LayoutTransform>2</Button>
+            <Button Click="layer_Click" ToolTip="Text"         ><Button.LayoutTransform><ScaleTransform ScaleX=".75" ScaleY=".75"/></Button.LayoutTransform>3</Button>
+            <Button Click="layer_Click" ToolTip="Spare"        ><Button.LayoutTransform><ScaleTransform ScaleX=".75" ScaleY=".75"/></Button.LayoutTransform>4</Button>
+            <Button Click="layer_Click" ToolTip="Lines"        ><Button.LayoutTransform><ScaleTransform ScaleX=".75" ScaleY=".75"/></Button.LayoutTransform>5</Button>
+            <Button Click="layer_Click" ToolTip="Doors/Objects"><Button.LayoutTransform><ScaleTransform ScaleX=".75" ScaleY=".75"/></Button.LayoutTransform>6</Button>
+            <Button Click="layer_Click" ToolTip="Tokens"       ><Button.LayoutTransform><ScaleTransform ScaleX=".75" ScaleY=".75"/></Button.LayoutTransform>7</Button>
+            <Button Click="layer_Click" ToolTip="Spare"        ><Button.LayoutTransform><ScaleTransform ScaleX=".75" ScaleY=".75"/></Button.LayoutTransform>8</Button>
+            <Button Click="layer_Click" ToolTip="Spare"        ><Button.LayoutTransform><ScaleTransform ScaleX=".75" ScaleY=".75"/></Button.LayoutTransform>9</Button>
+            <Button Margin="0,10,0,0" Click="layer_Click" ToolTip="Reset"        ><Button.LayoutTransform><ScaleTransform ScaleX=".75" ScaleY=".75"/></Button.LayoutTransform>c</Button>
+            <TextBlock Margin="0,15,0,0" HorizontalAlignment="Center">Pen</TextBlock>
+            <Rectangle ToolTip ="Pen/Stroke Color" StrokeThickness="1" Stroke="Black" HorizontalAlignment="Center" Name="strokeRect" Width="15" Height="15" Fill="Black" MouseDown="colorsample_MouseDown" ContextMenu="{DynamicResource StrokeMenu}"/>
+            <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center">Fill</TextBlock>
+            <Rectangle ToolTip ="Brush/Fill Color" StrokeThickness="1" Stroke="Black" HorizontalAlignment="Center" Name="fillRect" Width="15" Height="15" Fill="Black" MouseDown="colorsample_MouseDown" ContextMenu="{DynamicResource FillMenu}"/>
+            <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center">Th</TextBlock>
+            <Grid ToolTip ="Stroke Thickness" MouseDown="Thickness_Clicked" Background="White" Width="15" Height="15" ContextMenu="{DynamicResource ThicknessMenu}">
+                <Line Name="thicknessSample" X1="0" X2="15" Y1="7.5" Y2="7.5" StrokeThickness="3" Stroke="Black" ContextMenu="{DynamicResource ThicknessMenu}"/>
+            </Grid>
+            <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center">Op</TextBlock>
+            <Grid>
+            <Rectangle StrokeThickness="1" Stroke="Black" HorizontalAlignment="Center" Width="15" Height="15" ContextMenu="{DynamicResource OpacityMenu}"/>
+            <Rectangle ToolTip ="Opacity" MouseDown="Opacity_Clicked" Fill="Black" HorizontalAlignment="Center" Name="opacityRect" Width="15" Height="15" ContextMenu="{DynamicResource OpacityMenu}"/>
+            </Grid>
+
+        </StackPanel>
+
+        <ScrollViewer Name="scrollViewer" ScrollChanged="map_ScrollChanged"  HorizontalScrollBarVisibility="Visible" Background="{DynamicResource Shine1}">
+            <Grid Name="canvas" MouseWheel="scrollViewer_MouseWheel" ClipToBounds="True">
+                <Rectangle Name="rectHit" Fill="White" MouseMove ="canvas_MouseMove" MouseDown="canvas_MouseDown" MouseUp="canvas_MouseUp" Opacity="0" IsHitTestVisible="True" ClipToBounds="False"></Rectangle>
+            </Grid>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

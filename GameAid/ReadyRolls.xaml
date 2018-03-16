@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="GameAid.ReadyRolls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="75" d:DesignWidth="700">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" BorderThickness="1" BorderBrush="#FF80B0D0" CornerRadius="2">
+            <DockPanel>
+                <Menu DockPanel.Dock="Right" Height="23" >
+                    <MenuItem Name="m_manage" Header="Manage..." SubmenuOpened="Manage_ContextMenuOpening">
+                        <MenuItem Header="Add Manual..." Click="Manual_Click"/>
+                        <Separator/>
+                        <MenuItem Header="Load..." Click="LoadRolls_Click"/>
+                        <MenuItem Header="Save..." Click="SaveRolls_Click"/>
+                        <Separator/>
+                        <MenuItem Header="Clear All" Click="Clear_Click"/>
+                        <Separator/>
+                        <MenuItem Header="Set Default Location:" Click="Loc_SetDefault_Click"/>
+                        <MenuItem Header="Set Default Location:" Click="Loc_SetDefault_Click"/>
+                        <Separator/>
+                        <MenuItem Header="Convert To Squad" Click="Convert_to_Squad_Click"/>
+                    </MenuItem>
+                </Menu>
+                <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" Padding="5,0,5,0">Ready Rolls:</TextBlock>
+                <Button DockPanel.Dock="Left" Margin="5,0,0,0" Padding="5,0,5,0" Click="Reset_Click">Reset</Button>
+                <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" Padding="15,0,5,0">Fumbles:</TextBlock>
+                <Button DockPanel.Dock="Left" Margin="5,0,0,0" Padding="5,0,5,0" Click="Fumble_Melee_Click">Melee</Button>
+                <Button DockPanel.Dock="Left" Margin="5,0,0,0" Padding="5,0,5,0" Click="Fumble_Natural_Click">Natural</Button>
+                <Button DockPanel.Dock="Left" Margin="5,0,0,0" Padding="5,0,5,0" Click="Fumble_Missile_Click">Missile</Button>
+                <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" Padding="15,0,5,0">Loc:</TextBlock>
+                <ComboBox DockPanel.Dock="Left" Margin="5,0,0,0" Padding="5,0,5,0" Name="locCombo"></ComboBox>
+                <Button DockPanel.Dock="Left" Margin="5,0,0,0" Padding="5,0,5,0" Click="Loc_Click">Melee</Button>
+                <Button DockPanel.Dock="Left" Margin="5,0,0,0" Padding="5,0,5,0" Click="Loc_Missile_Click">Missile</Button>
+                <Canvas/>
+            </DockPanel>
+        </Border>
+        <ScrollViewer>
+            <Grid Name="mainGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="30"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" MinWidth="30"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" MinWidth="30"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" MinWidth="30"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

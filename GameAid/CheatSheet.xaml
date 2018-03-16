@@ -1,0 +1,248 @@
+﻿<Window x:Class="GameAid.CheatSheet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Runequest Cheat Sheet" Height="630" Width="800">
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Margin="2,0,2,0" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" Text="RESULTS OF DAMAGE"/>
+                    <TextBlock Margin="0,5,0,0" Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Text="Damage Equal to or in Excess of Hit Points"/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" TextWrapping="Wrap" Text="Leg"/>
+                    <TextBlock Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="The limb is useless.   Adventurer falls."/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" TextWrapping="Wrap" Text="Abdomen"/>
+                    <TextBlock Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="Both legs are useless. Adventurer falls.  Adventurer is bleeding."/>
+                    <TextBlock Grid.Column="0" Grid.Row="4" TextWrapping="Wrap" Text="Chest"/>
+                    <TextBlock Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="Adventurer falls.  Too hurt to fight, he can only crawl.  No heroism roll.  Adventurer is bleeding."/>
+                    <TextBlock Grid.Column="0" Grid.Row="5" TextWrapping="Wrap" Text="Arm"/>
+                    <TextBlock Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="Limb is useless.  Items held in hand fall.  May fight standing using remaining limbs."/>
+                    <TextBlock Grid.Column="0" Grid.Row="6" TextWrapping="Wrap" Text="Head"/>
+                    <TextBlock Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="Adventurer is unconscious.  Adventurer is bleeding.  Heroism (CON*1) each round to continue fighting on instinct (no checks)."/>
+                    <TextBlock Margin="0,5,0,0" Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="0" Grid.Row="7" TextWrapping="Wrap" Text="Damage Equals or Exceeds Double Location Hit Points"/>
+                    <TextBlock Grid.Column="0" Grid.Row="8" TextWrapping="Wrap" Text="Limbs"/>
+                    <TextBlock Grid.Column="1" Grid.Row="8" TextWrapping="Wrap" Text="Limb is severed (slash) or maimed (other).  Heroism (CON*1) or fall unconscious to shock if damage was taken in one hit.  Adventurer is bleeding.  Severed/maimed limbs must be brought positive within 10 minutes or they require regrowth/splints to heal.  Damage to limbs is limited to double the limb hit points."/>
+                    <TextBlock Grid.Column="0" Grid.Row="9" TextWrapping="Wrap" Text="Any Core Location"/>
+                    <TextBlock Grid.Column="1" Grid.Row="9" TextWrapping="Wrap" Text="Adventurer is unconscious.  No heroism roll.  Adventurer bleeds without CON rolls until dead or healed.  Core locations may take any amount of damage."/>
+                    <TextBlock Margin="0,5,0,0" Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="0" Grid.Row="10" TextWrapping="Wrap" Text="General Phenomena"/>
+                    <TextBlock Grid.Column="0" Grid.Row="11" TextWrapping="Wrap" Text="Bleeding"/>
+                    <TextBlock Grid.Column="1" Grid.Row="11" TextWrapping="Wrap" Text="Roll CON*5 in bookkeeping to avoid 1HP loss every round. Keep rolling until success at CON*1 or death."/>
+                    <TextBlock Grid.Column="0" Grid.Row="12" TextWrapping="Wrap" Text="Falling"/>
+                    <TextBlock Grid.Column="1" Grid.Row="12" TextWrapping="Wrap" Text="The adventurer falls unless heroic (CON*1)  and is unable to do anything else that round.  Unless otherwise indicated he may fight from the ground during the following melee rounds subject to the usual penalties."/>
+                    <TextBlock Grid.Column="0" Grid.Row="13" TextWrapping="Wrap" Text="Healing"/>
+                    <TextBlock Grid.Column="1" Grid.Row="13" TextWrapping="Wrap" Text="A fallen but conscious adventurer may heal himself through magic or first aid unless otherwise indicated."/>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2">
+                <Grid Margin="0,0,2,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" Text="DODGE RESULT" FontWeight="Bold" />
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Criticals:"/>
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="Avoid critical attack."/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Special:"/>
+                    <TextBlock Grid.Column="1" Grid.Row="2" Text="Avoid special attack."/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Success:"/>
+                    <TextBlock Grid.Column="1" Grid.Row="3" Text="Avoid normal attack. "/>
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Fail:"/>
+                    <TextBlock Grid.Column="1" Grid.Row="4" Text="Successful attack hits. "/>
+                    <TextBlock Grid.Column="0" Grid.Row="5" Text="Fumble:"/>
+                    <TextBlock Grid.Column="1" Grid.Row="5" TextWrapping="Wrap"  Text="Automatic normal hit unless attacker rolls better."/>
+                </Grid>
+
+                <Grid Margin="0,0,2,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Margin="0,5,0,0" Grid.ColumnSpan="2" TextWrapping="Wrap" Grid.Column="0" Grid.Row="0" Text="SHIELD COVERAGE" FontWeight="Bold"/>
+                    <TextBlock TextWrapping="Wrap" Grid.Column="0" Grid.Row="1" Text="Type"/>
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" Text="Area Covered"/>
+                    <TextBlock TextWrapping="Wrap" Grid.Column="0" Grid.Row="2" Text="Buckler"/>
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="2" Text="Shield arm."/>
+                    <TextBlock TextWrapping="Wrap" Grid.Column="0" Grid.Row="3" Text="Target/Heater"/>
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="3" Text="Shield arm + 1 other loc."/>
+                    <TextBlock TextWrapping="Wrap" Grid.Column="0" Grid.Row="4" Text="Hoplite/Kite/Viking"/>
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="4" Text="Shield arm + 2 other loc. contiguous to each other."/>
+                </Grid>
+
+                <Grid Margin="0,0,2,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="0,5,0,0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" Text="ATTACK AND PARRY RESULTS" FontWeight="Bold"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Text="Critical"/>
+                    <TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="As Special and ignores all armor and all but critical dodges."/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" TextWrapping="Wrap" Text="Special"/>
+                    <TextBlock Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="Weapon does special damage. Thrusting weapons impale.  Target suffers automatic knockback from non-thrusting weapons."/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" TextWrapping="Wrap" Text="Success"/>
+                    <TextBlock Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="Normal rolled damage.  If non-thrusting damage is greater than target's SIZ, target is knocked back."/>
+                    <TextBlock Grid.Column="0" Grid.Row="4" TextWrapping="Wrap" Text="Miss"/>
+                    <TextBlock Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="No damage.  Attacking weapon may be damaged by parrying weapon."/>
+                    <TextBlock Grid.Column="0" Grid.Row="5" TextWrapping="Wrap" Text="Fumble"/>
+                    <TextBlock Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="As Miss and also roll on fumble table."/>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Grid.Column="0">
+                <Grid Margin="2,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Text="ATTACK MODIFIERS" FontWeight="Bold"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1"  Text="+25"/>
+                    <TextBlock Grid.Column="1" Grid.Row="1"  TextWrapping="Wrap" Text="Only basic touch required."/>
+                    <TextBlock Grid.Column="0" Grid.Row="2"  Text="+25"/>
+                    <TextBlock Grid.Column="1" Grid.Row="2"  TextWrapping="Wrap" Text="Target helpless."/>
+                    <TextBlock Grid.Column="0" Grid.Row="3"  Text="+20"/>
+                    <TextBlock Grid.Column="1" Grid.Row="3"  TextWrapping="Wrap" Text="Target surprised during non-combat or knocked down."/>
+                    <TextBlock Grid.Column="0" Grid.Row="4"  Text="+10"/>
+                    <TextBlock Grid.Column="1" Grid.Row="4"  TextWrapping="Wrap" Text="Target surprised."/>
+                    <TextBlock Grid.Column="0" Grid.Row="5"  Text="+10"/>
+                    <TextBlock Grid.Column="1" Grid.Row="5"  TextWrapping="Wrap" Text="Target unshielded."/>
+                    <TextBlock Grid.Column="0" Grid.Row="6"  Text="+10"/>
+                    <TextBlock Grid.Column="1" Grid.Row="6"  TextWrapping="Wrap" Text="Attack from behind."/>
+                    <TextBlock Grid.Column="0" Grid.Row="7"  Text="+10"/>
+                    <TextBlock Grid.Column="1" Grid.Row="7"  TextWrapping="Wrap" Text="Prepared attack."/>
+                    <TextBlock Grid.Column="0" Grid.Row="8"  Text="+10"/>
+                    <TextBlock Grid.Column="1" Grid.Row="8"  TextWrapping="Wrap" Text="Attacking from above target."/>
+                    <TextBlock Grid.Column="0" Grid.Row="9"  Text="+01"/>
+                    <TextBlock Grid.Column="1" Grid.Row="9"  TextWrapping="Wrap" Text="Per 1 SIZ the target is above 30."/>
+                    <TextBlock Grid.Column="0" Grid.Row="10"  Text="-75"/>
+                    <TextBlock Grid.Column="1" Grid.Row="10"  TextWrapping="Wrap" Text="Target cannot be seen or sensed."/>
+                    <TextBlock Grid.Column="0" Grid.Row="11"  Text="-20"/>
+                    <TextBlock Grid.Column="1" Grid.Row="11"  TextWrapping="Wrap" Text="Attacker has been knocked down."/>
+                    <TextBlock Grid.Column="0" Grid.Row="12" Text="-10"/>
+                    <TextBlock Grid.Column="1" Grid.Row="12" TextWrapping="Wrap" Text="Target moving (if attacking with a missile weapon)."/>
+                    <TextBlock Grid.Column="0" Grid.Row="13" Text="-10"/>
+                    <TextBlock Grid.Column="1" Grid.Row="13" TextWrapping="Wrap" Text="Per SIZ the target is below 4."/>
+                    <TextBlock Grid.Column="0" Grid.Row="14" Text="-10"/>
+                    <TextBlock Grid.Column="1" Grid.Row="14" TextWrapping="Wrap" Text="Attacker is riding moving animal (may be mitigated by riding skills)."/>
+                </Grid>
+                
+                <Grid Margin="2,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="0,5,0,0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" Text="FIRE DAMAGE" FontWeight="Bold"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Flame"/>
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="1 / round"/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Small Fire"/>
+                    <TextBlock Grid.Column="1" Grid.Row="2" Text="1d6 / round"/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Large Fire"/>
+                    <TextBlock Grid.Column="1" Grid.Row="3" Text="2d6 / round"/>
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Intense Fire"/>
+                    <TextBlock Grid.Column="1" Grid.Row="4" Text="3d6 / round"/>
+                    <TextBlock Grid.ColumnSpan="2" Margin="0,5,0,0" Grid.Column="0" Grid.Row="5" Text="SUFFOCATION" FontWeight="Bold"/>
+                    <TextBlock Grid.ColumnSpan="2" Margin="0,3,0,3" Grid.Column="0" Grid.Row="6" Text="CON*(11-rounds exposed), then..."/>
+                    <TextBlock Grid.Column="0" Grid.Row="7" Text="Water"/>
+                    <TextBlock Grid.Column="1" Grid.Row="7" Text="1d8 / round"/>
+                    <TextBlock Grid.Column="0" Grid.Row="8" Text="Smoke"/>
+                    <TextBlock Grid.Column="1" Grid.Row="8" Text="1d4 / round"/>
+                    <TextBlock Grid.Column="0" Grid.Row="9" Text="Poison"/>
+                    <TextBlock Grid.Column="1" Grid.Row="9" Text="1d8 / round"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+        <Button Margin="0,0,2,2" Grid.Column="2" Grid.Row="1" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Right" IsCancel="True" IsDefault="True">OK</Button>
+    </Grid>
+</Window>

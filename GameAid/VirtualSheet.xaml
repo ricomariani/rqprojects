@@ -1,0 +1,250 @@
+﻿<UserControl x:Class="GameAid.VirtualSheet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="300" Width="500">
+    <UserControl.Resources>
+        <ResourceDictionary 
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+            xmlns:d="http://schemas.microsoft.com/expression/interactivedesigner/2006" 
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            mc:Ignorable="d">
+
+            <Style TargetType="{x:Type Button}" BasedOn="{x:Null}">
+                <Setter Property="FocusVisualStyle" Value="{DynamicResource NuclearButtonFocusVisual}" />
+                <Setter Property="Background" Value="{DynamicResource NormalBrush}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
+                <Setter Property="Padding" Value="2,2,2,2"/>
+                <Setter Property="MinHeight" Value="25"/>
+                <Setter Property="MinWidth" Value="25"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <ControlTemplate.Resources>
+                                <Storyboard x:Key="HoverOn">
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="MainColor" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.6" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                                <Storyboard x:Key="HoverOff">
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="MainColor" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                                <Storyboard x:Key="PressedOn">
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Shine" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.5" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                                <Storyboard x:Key="PressedOff">
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Shine" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </ControlTemplate.Resources>
+                            <Grid x:Name="Grid">
+                                <Border x:Name="MainColor" BorderThickness="0,0,1,1" Background="{DynamicResource NormalBrush}" BorderBrush="{DynamicResource NormalBrush}" CornerRadius="6,6,6,6">
+                                    <Border x:Name="Shine" Margin="0,0,0,0" Width="Auto" Height="Auto" Background="{DynamicResource Shine1}" BorderThickness="2,2,2,2" CornerRadius="5,5,6,5">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="{DynamicResource WhiteColor}" />
+                                        </Border.BorderBrush>
+                                    </Border>
+                                </Border>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" />
+                            </Grid>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsDefault" Value="True">
+                                    <Setter Property="BorderBrush" TargetName="MainColor" Value="{DynamicResource DefaultedBorderBrush}" />
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                    <Setter Property="BorderBrush" Value="{DynamicResource DefaultedBorderBrush}" TargetName="MainColor" />
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
+                                    </Trigger.ExitActions>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard" />
+                                    </Trigger.ExitActions>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard" />
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="true" />
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="MainColor" />
+                                    <Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="MainColor" />
+                                    <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel Name="topDockPanel">
+        <Border Name="panel1" DockPanel.Dock="Top" BorderThickness="1" BorderBrush="#FF80B0D0" CornerRadius="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Margin="5,0,5,0" VerticalAlignment="Center" Grid.Column="0">From:</Label>
+                <ComboBox Grid.Column="1" Height="23" Name="comboPlayers" MinWidth="50" SelectionChanged="comboPlayers_SelectionChanged" />
+                <Label Margin="5,0,5,0" VerticalAlignment="Center" Grid.Column="2">Group:</Label>
+                <ComboBox Grid.Column="3" Height="23" Name="comboGroup" MinWidth="50" SelectionChanged="comboGroup_SelectionChanged" />
+                <Label Margin="5,0,5,0" VerticalAlignment="Center" Grid.Column="4">Who:</Label>
+                <ComboBox Grid.Column="5" Height="23" Name="comboParty" MinWidth="50" SelectionChanged="comboParty_SelectionChanged" />
+                <Menu Grid.Column="6">
+                    <MenuItem Header="Actions...">
+                    <MenuItem Header="Refresh" Click="Refresh_Click"></MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Add To Squad" Click="Squad_Click"></MenuItem>
+                    <MenuItem Header="Show Squad" Click="ShowSquad_Click"></MenuItem>
+                        <MenuItem Header="Clear Squad" Click="ClearSquad_Click"></MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Training Mode" Click="Train_Click"></MenuItem>
+                    </MenuItem>
+                </Menu>
+            </Grid>
+        </Border>
+        <Border Name="panel4" DockPanel.Dock="Top" BorderThickness="1" BorderBrush="#FF80B0D0" CornerRadius="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label    Grid.Column="0" Margin="5,0,0,0" VerticalAlignment="Center" >Session Hours:</Label>                
+                <TextBox  Grid.Column="1" Margin="5,0,0,0" Name="textSessionHours"></TextBox>
+                <StackPanel Grid.Column="2" Margin="5,0,0,0" Orientation="Horizontal">
+                    <RadioButton Name="limHours" Margin="5,0,0,0" VerticalAlignment="Center" GroupName="stop">Hours or</RadioButton>
+                    <RadioButton Name="limCount" Margin="5,0,0,0" VerticalAlignment="Center" GroupName="stop" IsChecked="True">Count or</RadioButton>
+                    <RadioButton Name="limSkill" Margin="5,0,0,0" VerticalAlignment="Center" GroupName="stop">Skill:</RadioButton>
+                </StackPanel>
+                <TextBox  Grid.Column="3" Margin="5,0,0,0" Width="40" Name="textLimit">1</TextBox>
+                <Label    Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center">Gain Roll:</Label>
+                <TextBox  Grid.Column="5" Margin="5,0,0,0" Width="45" Name="textGain"></TextBox>
+                <Button   Grid.Column="6" Margin="10,0,0,0" VerticalAlignment="Center" Click="TrainingDone_Click">Done</Button>
+            </Grid>
+        </Border>
+        <Border Name="panel5" DockPanel.Dock="Top" BorderThickness="1" BorderBrush="#FF80B0D0" CornerRadius="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="209"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Canvas Grid.Column="0"/>
+                <Label    Grid.Column="1" Margin="5,0,0,0" VerticalAlignment="Center">Book or Teacher Pct:</Label>
+                <TextBox  Grid.Column="2" Margin="5,0,0,0" Width="40" Name="bookPct"></TextBox>
+                <Label    Grid.Column="3" Margin="5,0,0,0" VerticalAlignment="Center">Gain Roll:</Label>
+                <TextBox  Grid.Column="4" Margin="5,0,0,0" Width="45" Name="bookGain"></TextBox>
+            </Grid>
+        </Border>
+        <ScrollViewer Name="scrollviewer" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+            <StackPanel Name="m1" Orientation="Vertical">
+                <Grid Margin="30,0,0,0" HorizontalAlignment="Left" Name="gTop" VerticalAlignment="Top" DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <StackPanel Name="h1" Orientation="Horizontal">
+                    <Canvas Width="30"></Canvas>
+                    <Grid HorizontalAlignment="Left" Name="g1" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="100*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                    <Canvas Width="30"></Canvas>
+                    <Grid HorizontalAlignment="Left" Name="g2" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="100*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                    <Canvas Width="30"></Canvas>
+                    <Grid HorizontalAlignment="Left" Name="g3" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="100*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                    <Canvas Width="30"></Canvas>
+                    <StackPanel Name="v1" Orientation="Vertical">
+                        <Grid HorizontalAlignment="Left" Name="g4" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                        <Grid HorizontalAlignment="Left" Name="g5" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition MinWidth="20"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                        <Grid HorizontalAlignment="Left" Name="g6" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition MinWidth="20"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+                <Grid Margin="30,0,0,0" HorizontalAlignment="Left" Name="gBottom" VerticalAlignment="Top" DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>
+
+    

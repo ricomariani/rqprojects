@@ -1,0 +1,201 @@
+﻿<UserControl x:Class="GameAid.AttackStrip"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="30" d:DesignWidth="600">
+    <Grid x:Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" MinWidth="30"/>
+            <ColumnDefinition Width="Auto" MinWidth="30"/>
+            <ColumnDefinition Width="Auto" MinWidth="30"/>
+            <ColumnDefinition Width="Auto" MinWidth="30"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" MinWidth="30"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Margin="2,0,0,0" Name="buttonClear" Click="clear_Click">Clear</Button>
+        <Button Grid.Column="1" Margin="5,0,5,0" Name="buttonRoll" Click="buttonAttack_Click">Roll</Button>
+        <TextBlock Grid.Column="2" Margin="5,0,0,0" Name="attackWeapon" VerticalAlignment="Center" >Weapon</TextBlock>
+        <ComboBox Grid.Column="3" Margin="5,0,0,0" VerticalAlignment="Center" Name="attackMode" SelectionChanged="attackMode_SelectionChanged">
+            <ComboBoxItem IsSelected="True">Slash</ComboBoxItem>
+            <ComboBoxItem>Thrust</ComboBoxItem>
+            <ComboBoxItem>Crush</ComboBoxItem>
+        </ComboBox>
+        
+        <TextBox Grid.Column="4" Margin="5,0,0,0" Name="attackChance"></TextBox>
+        <TextBox Grid.Column="5" Margin="5,0,0,0" Name="attackDamage"></TextBox>
+        <TextBox Grid.Column="6" Margin="5,0,0,0" Name="attackSpecial"></TextBox>
+        <TextBox Grid.Column="7" Margin="5,0,0,0" Name="attackTarget"></TextBox>
+        <ComboBox Grid.Column="8" Margin="5,0,0,0" MinWidth="80" VerticalAlignment="Center" Name="comboLoc">
+            <ComboBoxItem>allosaur</ComboBoxItem>
+            <ComboBoxItem>allosaur_missile</ComboBoxItem>
+            <ComboBoxItem>amphisboenae</ComboBoxItem>
+            <ComboBoxItem>amphisboenae_missile</ComboBoxItem>
+            <ComboBoxItem>ape</ComboBoxItem>
+            <ComboBoxItem>ape_missile</ComboBoxItem>
+            <ComboBoxItem>baboon</ComboBoxItem>
+            <ComboBoxItem>baboon_missile</ComboBoxItem>
+            <ComboBoxItem>behemoth</ComboBoxItem>
+            <ComboBoxItem>behemoth_missile</ComboBoxItem>
+            <ComboBoxItem>bird</ComboBoxItem>
+            <ComboBoxItem>bird_missile</ComboBoxItem>
+            <ComboBoxItem>broo</ComboBoxItem>
+            <ComboBoxItem>broo_missile</ComboBoxItem>
+            <ComboBoxItem>centaur</ComboBoxItem>
+            <ComboBoxItem>centaur_missile</ComboBoxItem>
+            <ComboBoxItem>centipede</ComboBoxItem>
+            <ComboBoxItem>centipede_missile</ComboBoxItem>
+            <ComboBoxItem>ceratopsian</ComboBoxItem>
+            <ComboBoxItem>ceratopsian_missile</ComboBoxItem>
+            <ComboBoxItem>chonchon</ComboBoxItem>
+            <ComboBoxItem>chonchon_missile</ComboBoxItem>
+            <ComboBoxItem>clifftoad</ComboBoxItem>
+            <ComboBoxItem>clifftoad_missile</ComboBoxItem>
+            <ComboBoxItem>cockatrice</ComboBoxItem>
+            <ComboBoxItem>cockatrice_missile</ComboBoxItem>
+            <ComboBoxItem>crab</ComboBoxItem>
+            <ComboBoxItem>crab_missile</ComboBoxItem>
+            <ComboBoxItem>crocodile</ComboBoxItem>
+            <ComboBoxItem>crocodile_missile</ComboBoxItem>
+            <ComboBoxItem>demibird</ComboBoxItem>
+            <ComboBoxItem>demibird_missile</ComboBoxItem>
+            <ComboBoxItem>doc</ComboBoxItem>
+            <ComboBoxItem>doc_missile</ComboBoxItem>
+            <ComboBoxItem>dragon</ComboBoxItem>
+            <ComboBoxItem>dragon_missile</ComboBoxItem>
+            <ComboBoxItem>dragonnewt</ComboBoxItem>
+            <ComboBoxItem>dragonnewt_missile</ComboBoxItem>
+            <ComboBoxItem>dragonsnail1</ComboBoxItem>
+            <ComboBoxItem>dragonsnail1_missile</ComboBoxItem>
+            <ComboBoxItem>dragonsnail2</ComboBoxItem>
+            <ComboBoxItem>dragonsnail2_missile</ComboBoxItem>
+            <ComboBoxItem>elemental</ComboBoxItem>
+            <ComboBoxItem>elemental_missile</ComboBoxItem>
+            <ComboBoxItem>elephant</ComboBoxItem>
+            <ComboBoxItem>elephant_missile</ComboBoxItem>
+            <ComboBoxItem>fachan</ComboBoxItem>
+            <ComboBoxItem>fachan_missile</ComboBoxItem>
+            <ComboBoxItem>fish</ComboBoxItem>
+            <ComboBoxItem>fish_missile</ComboBoxItem>
+            <ComboBoxItem>fourlegged</ComboBoxItem>
+            <ComboBoxItem>fourlegged_missile</ComboBoxItem>
+            <ComboBoxItem>gargoyle</ComboBoxItem>
+            <ComboBoxItem>gargoyle_missile</ComboBoxItem>
+            <ComboBoxItem>giantinsect</ComboBoxItem>
+            <ComboBoxItem>giantinsect_missile</ComboBoxItem>
+            <ComboBoxItem>gobbler</ComboBoxItem>
+            <ComboBoxItem>gobbler_missile</ComboBoxItem>
+            <ComboBoxItem>gorgon</ComboBoxItem>
+            <ComboBoxItem>gorgon_missile</ComboBoxItem>
+            <ComboBoxItem>grampus</ComboBoxItem>
+            <ComboBoxItem>grampus_missile</ComboBoxItem>
+            <ComboBoxItem>greatrace</ComboBoxItem>
+            <ComboBoxItem>greatrace_missile</ComboBoxItem>
+            <ComboBoxItem>griffin</ComboBoxItem>
+            <ComboBoxItem>griffin_missile</ComboBoxItem>
+            <ComboBoxItem>grotaron</ComboBoxItem>
+            <ComboBoxItem>grotaron_missile</ComboBoxItem>
+            <ComboBoxItem>grue</ComboBoxItem>
+            <ComboBoxItem>grue_missile</ComboBoxItem>
+            <ComboBoxItem>harpy</ComboBoxItem>
+            <ComboBoxItem>harpy_missile</ComboBoxItem>
+            <ComboBoxItem>headhanger</ComboBoxItem>
+            <ComboBoxItem>headhanger_missile</ComboBoxItem>
+            <ComboBoxItem>headless</ComboBoxItem>
+            <ComboBoxItem>headless_missile</ComboBoxItem>
+            <ComboBoxItem>huan_to</ComboBoxItem>
+            <ComboBoxItem>huan_to_missile</ComboBoxItem>
+            <ComboBoxItem>hulk</ComboBoxItem>
+            <ComboBoxItem>hulk_missile</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">humanoid</ComboBoxItem>
+            <ComboBoxItem>humanoid_missile</ComboBoxItem>
+            <ComboBoxItem>hydra</ComboBoxItem>
+            <ComboBoxItem>hydra_missile</ComboBoxItem>
+            <ComboBoxItem>jabberwock</ComboBoxItem>
+            <ComboBoxItem>jabberwock_missile</ComboBoxItem>
+            <ComboBoxItem>kali</ComboBoxItem>
+            <ComboBoxItem>kali_missile</ComboBoxItem>
+            <ComboBoxItem>krarshtkid</ComboBoxItem>
+            <ComboBoxItem>krarshtkid_missile</ComboBoxItem>
+            <ComboBoxItem>lamia</ComboBoxItem>
+            <ComboBoxItem>lamia_missile</ComboBoxItem>
+            <ComboBoxItem>lion</ComboBoxItem>
+            <ComboBoxItem>lion_missile</ComboBoxItem>
+            <ComboBoxItem>lucan</ComboBoxItem>
+            <ComboBoxItem>lucan_missile</ComboBoxItem>
+            <ComboBoxItem>magisaur</ComboBoxItem>
+            <ComboBoxItem>magisaur_missile</ComboBoxItem>
+            <ComboBoxItem>manatee</ComboBoxItem>
+            <ComboBoxItem>manatee_missile</ComboBoxItem>
+            <ComboBoxItem>manticore</ComboBoxItem>
+            <ComboBoxItem>manticore_missile</ComboBoxItem>
+            <ComboBoxItem>mantis</ComboBoxItem>
+            <ComboBoxItem>mantis_missile</ComboBoxItem>
+            <ComboBoxItem>merman</ComboBoxItem>
+            <ComboBoxItem>merman_missile</ComboBoxItem>
+            <ComboBoxItem>migo</ComboBoxItem>
+            <ComboBoxItem>migo_missile</ComboBoxItem>
+            <ComboBoxItem>morocanth</ComboBoxItem>
+            <ComboBoxItem>morocanth_missile</ComboBoxItem>
+            <ComboBoxItem>moth</ComboBoxItem>
+            <ComboBoxItem>moth_missile</ComboBoxItem>
+            <ComboBoxItem>murthoi</ComboBoxItem>
+            <ComboBoxItem>murthoi_missile</ComboBoxItem>
+            <ComboBoxItem>naga</ComboBoxItem>
+            <ComboBoxItem>naga_missile</ComboBoxItem>
+            <ComboBoxItem>newtling</ComboBoxItem>
+            <ComboBoxItem>newtling_missile</ComboBoxItem>
+            <ComboBoxItem>nuckelavee</ComboBoxItem>
+            <ComboBoxItem>nuckelavee_missile</ComboBoxItem>
+            <ComboBoxItem>octopus</ComboBoxItem>
+            <ComboBoxItem>octopus_missile</ComboBoxItem>
+            <ComboBoxItem>oldone</ComboBoxItem>
+            <ComboBoxItem>oldone_missile</ComboBoxItem>
+            <ComboBoxItem>orveltor</ComboBoxItem>
+            <ComboBoxItem>orveltor_missile</ComboBoxItem>
+            <ComboBoxItem>plesiosaur</ComboBoxItem>
+            <ComboBoxItem>plesiosaur_missile</ComboBoxItem>
+            <ComboBoxItem>preserver</ComboBoxItem>
+            <ComboBoxItem>preserver_missile</ComboBoxItem>
+            <ComboBoxItem>rocklizard</ComboBoxItem>
+            <ComboBoxItem>rocklizard_missile</ComboBoxItem>
+            <ComboBoxItem>satyr</ComboBoxItem>
+            <ComboBoxItem>satyr_missile</ComboBoxItem>
+            <ComboBoxItem>scorpion</ComboBoxItem>
+            <ComboBoxItem>scorpion_missile</ComboBoxItem>
+            <ComboBoxItem>scorpionman</ComboBoxItem>
+            <ComboBoxItem>scorpionman_missile</ComboBoxItem>
+            <ComboBoxItem>serpent</ComboBoxItem>
+            <ComboBoxItem>serpent_missile</ComboBoxItem>
+            <ComboBoxItem>spider</ComboBoxItem>
+            <ComboBoxItem>spider_missile</ComboBoxItem>
+            <ComboBoxItem>stirge</ComboBoxItem>
+            <ComboBoxItem>stirge_missile</ComboBoxItem>
+            <ComboBoxItem>tako</ComboBoxItem>
+            <ComboBoxItem>tako_missile</ComboBoxItem>
+            <ComboBoxItem>tengu</ComboBoxItem>
+            <ComboBoxItem>tengu_missile</ComboBoxItem>
+            <ComboBoxItem>termite</ComboBoxItem>
+            <ComboBoxItem>termite_missile</ComboBoxItem>
+            <ComboBoxItem>tree</ComboBoxItem>
+            <ComboBoxItem>tree_missile</ComboBoxItem>
+            <ComboBoxItem>walktapus</ComboBoxItem>
+            <ComboBoxItem>walktapus_missile</ComboBoxItem>
+            <ComboBoxItem>wasp</ComboBoxItem>
+            <ComboBoxItem>wasp_missile</ComboBoxItem>
+            <ComboBoxItem>wyrm</ComboBoxItem>
+            <ComboBoxItem>wyrm_missile</ComboBoxItem>
+            <ComboBoxItem>wyvern</ComboBoxItem>
+            <ComboBoxItem>wyvern_missile</ComboBoxItem>
+        </ComboBox>
+        <TextBox Grid.Column="9" Margin="5,0,0,0" VerticalAlignment="Center" Name="locRoll"></TextBox>
+        <TextBlock Grid.Column="10" Margin="5,0,0,0" VerticalAlignment="Center" Name="note"/>
+    </Grid>
+</UserControl>

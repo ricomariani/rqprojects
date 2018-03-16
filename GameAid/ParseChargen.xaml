@@ -1,0 +1,90 @@
+﻿<Window x:Class="GameAid.ParseChargen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Parse Character Generator Output" Height="400" Width="600">
+    <Window.Resources>
+        <ContextMenu x:Key="IconFillMenu">
+            <MenuItem Header="No Change"/>
+            <Separator/>
+            <MenuItem Click="Disable_Click" Header="No Tiles"/>
+            <Separator/>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">White Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource Shine1}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Grey Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineGrey}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Red Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineRed}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Green Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineGreen}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Blue Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineBlue}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Magenta Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineMagenta}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Cyan Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineCyan}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Click="Fill_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">Yellow Shine</TextBlock>
+                        <Rectangle Fill="{DynamicResource ShineYellow}" Height="20" Stroke="Black" Width="20"/>
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+        </ContextMenu>
+    </Window.Resources>   
+    <DockPanel>
+        <StackPanel Margin="0,2,0,0" DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="RightToLeft" Background="#FFDAF9FF">
+            <Button Width="50" Margin="5,0,0,0" IsCancel="True">Cancel</Button>
+            <Button Width="50" Margin="5,0,0,0" IsDefault="True" Click="Button_Click">OK</Button>
+            <Rectangle Name="fillRect" Margin="5,0,5,0" Width="50" Height="20" Stroke="Black" RadiusX="4" RadiusY="4" Fill="{DynamicResource ShineRed}" MouseDown="Rectangle_MouseDown" ContextMenu="{DynamicResource IconFillMenu}"></Rectangle>
+            <TextBlock FlowDirection="LeftToRight" Name="fillLabel" HorizontalAlignment="Center" VerticalAlignment="Center">...or Numbered Token Color:</TextBlock>
+            <StackPanel Name="m_preview" VerticalAlignment="Center" Width="25" Margin="25,0,5,0"></StackPanel>
+            <Button Width="80" Margin="5,0,5,0" Click="Clear_Click">Clear Token</Button>
+            <Button FlowDirection="LeftToRight" Width="100" Margin="5,0,5,0" Click="Access_Click">Access Library...</Button>
+        </StackPanel>
+        <TextBlock Margin="0,0,0,5" DockPanel.Dock="Top">Paste your text in the box below, then press OK.</TextBlock>
+        <TextBox x:Name="data" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" AcceptsReturn="True" AcceptsTab="False" FontFamily="Lucida Console" FontSize="10"></TextBox>
+    </DockPanel>
+</Window>

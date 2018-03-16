@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="GameAid.NameStrip"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+    d:DesignHeight="30" d:DesignWidth="600">
+    <Grid Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Margin="2,0,0,0" Name="buttonClear" Click="buttonClear_Click">Clear</Button>
+        <TextBlock Grid.Column="1" Margin="5,0,0,0" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="7" Margin="5,0,0,0" VerticalAlignment="Center" Name="name">Name</TextBlock>
+    </Grid>
+</UserControl>

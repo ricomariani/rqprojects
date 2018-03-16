@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="GameAid.PartyInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" BorderThickness="1" BorderBrush="#FF80B0D0" CornerRadius="2">
+            <DockPanel>
+                <TextBlock Margin="5,0,5,0" DockPanel.Dock="Left" VerticalAlignment="Center">Info:</TextBlock>
+                <Button Margin="5,0,5,0" DockPanel.Dock="Right" VerticalAlignment="Center" Click="Refresh_Click">Refresh</Button>
+
+                <ComboBox DockPanel.Dock="Left" Width="110" Name="displayOption" SelectionChanged="displayOption_SelectionChanged">
+                    <ComboBoxItem Content="Buffs" />
+                    <ComboBoxItem Content="Camp" />
+                    <ComboBoxItem Content="Checks" />
+                    <ComboBoxItem Content="Consumables" />
+                    <ComboBoxItem Content="Fatigue" />
+                    <ComboBoxItem Content="Folders" />
+                    <ComboBoxItem Content="Loot" />
+                    <ComboBoxItem Content="Mana" />
+                    <ComboBoxItem Content="Parties" />
+                    <ComboBoxItem Content="Party Dossier" />
+                    <ComboBoxItem Content="Party Members" />
+                    <ComboBoxItem Content="Presence" />
+                    <ComboBoxItem Content="Runemagic" />
+                    <ComboBoxItem Content="Spirit Mana" />
+                    <ComboBoxItem Content="Shugenja" />
+                    <ComboBoxItem Content="Wounds" IsSelected="True" />
+                </ComboBox>
+                <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" Name="desc"></TextBlock>
+
+            </DockPanel >
+        </Border>
+        <ScrollViewer PreviewMouseMove="ScrollViewer_MouseMove" PreviewMouseDown="ScrollViewer_MouseDown" PreviewMouseDoubleClick="ScrollViewer_DoubleClick">
+            <Grid Name="canvas">
+                <Grid Name="grid">
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

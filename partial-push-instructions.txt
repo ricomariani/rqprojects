@@ -1,0 +1,5 @@
+$ git checkout production
+$ git merge master
+$ rm -Rf bin build include lib .Python *.pyc
+$ git commit -a -m "Cleanup for production."
+$ git push heroku production

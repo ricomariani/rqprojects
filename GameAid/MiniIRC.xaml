@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="GameAid.MiniIRC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel MinWidth="400" MinHeight="100">
+        <StackPanel Name="ircToolbar" DockPanel.Dock="Bottom" MinHeight="18" Orientation="Horizontal" FlowDirection="LeftToRight"/>
+        <TextBox Name="ircInput" DockPanel.Dock="Bottom" Width="Auto" Height="Auto" PreviewKeyDown="ircInput_PreviewKeyDown"   KeyDown="ircInput_KeyDown"/>
+        <DockPanel MinWidth="400" MinHeight="100">
+            <TextBlock Name="ircTopic" DockPanel.Dock="Top" MinHeight="18"/>
+            <ListBox Name="ircNames" DockPanel.Dock="Right" MinWidth="100" MouseDoubleClick="ircNames_MouseDoubleClick" />
+            <TextBox Name="ircHistory" Width="Auto" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" />
+        </DockPanel>
+    </DockPanel>
+</UserControl>

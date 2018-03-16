@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="GameAid.CommandStrip"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="500">
+    <Grid x:Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Margin="2,0,0,0" Name="buttonClear" Click="clear_Click">Clear</Button>
+        <Button Grid.Column="1" Margin="5,0,5,0" Name="buttonCommand" Click="command_Click">Roll</Button>
+        <TextBox Grid.Column="2" Grid.ColumnSpan="2" Margin="5,0,0,0" VerticalAlignment="Center" Name="player"/>
+        <TextBox Grid.Column="4" Grid.ColumnSpan="6" Margin="5,0,0,0" VerticalAlignment="Center" Name="command"/>
+    </Grid>
+
+</UserControl>

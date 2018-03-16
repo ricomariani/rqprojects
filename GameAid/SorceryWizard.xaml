@@ -1,0 +1,33 @@
+﻿<Window x:Class="GameAid.SorceryWizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sorcery Helper" Height="450" Width="800">
+    <Grid Margin="0,2,0,-2">
+        <Label Content="Intensity:  What is the biggest spell you will cast?" HorizontalAlignment="Left" Margin="31,29,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="m_intensity" HorizontalAlignment="Left" Height="23" Margin="303,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Multispell:  How many spells?" HorizontalAlignment="Left" Margin="31,62,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="m_spells" HorizontalAlignment="Left" Height="23" Margin="303,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Multispell:  How many unique targets?" HorizontalAlignment="Left" Margin="31,93,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="m_targets" HorizontalAlignment="Left" Height="23" Margin="303,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Range:  Use mana to increase the range?" HorizontalAlignment="Left" Margin="31,122,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="m_range" HorizontalAlignment="Left" Height="23" Margin="303,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Duration:  Use mana to extend the duration?" HorizontalAlignment="Left" Margin="31,153,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="m_duration" HorizontalAlignment="Left" Height="23" Margin="303,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Ease:  How much mana discount to you desire?" HorizontalAlignment="Left" Margin="31,184,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="m_ease" HorizontalAlignment="Left" Height="23" Margin="303,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Speed:  How many strike ranks to reduce?" HorizontalAlignment="Left" Margin="31,218,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="m_speed" HorizontalAlignment="Left" Height="23" Margin="303,211,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Accuracy:  How much location manipulation?" HorizontalAlignment="Left" Margin="31,251,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="m_accuracy" HorizontalAlignment="Left" Height="23" Margin="303,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Force:  Use mana to boost your PvP?" HorizontalAlignment="Left" Margin="31,282,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="m_force" HorizontalAlignment="Left" Height="23" Margin="303,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Hold:  Prepare the spell for instant cast?" HorizontalAlignment="Left" Margin="31,311,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="m_hold" Content="" HorizontalAlignment="Left" Margin="323,308,0,0" VerticalAlignment="Top"/>
+        <Label Content="Permanence:  Make the spell permanent?" HorizontalAlignment="Left" Margin="31,338,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="m_permanence" Content="" HorizontalAlignment="Left" Margin="323,338,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="m_describe" Content="Describe This Spell" HorizontalAlignment="Left" Margin="105,376,0,-19" VerticalAlignment="Top" Width="136" Click="m_describe_Click"/>
+        <Label Content="Description of this Effect:" HorizontalAlignment="Left" Margin="394,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.59,0.826" Width="257"/>
+        <TextBlock x:Name="m_description" HorizontalAlignment="Left" Margin="394,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="299" Width="388"/>
+        <Button Height="23" HorizontalAlignment="Left" Margin="559,0,0,18" Name="buttonOK" VerticalAlignment="Bottom" Width="75" IsCancel="True">Exit</Button>
+    </Grid>
+</Window>
