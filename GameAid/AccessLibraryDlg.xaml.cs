@@ -87,7 +87,7 @@ namespace GameAid
                     if (!MatchAll(v, matches))
                         continue;
 
-                    var url = "http://yourserver.com/uploads/gameaid/" + val;
+                    var url = Config.uploads_gameaid + val;
                     AddImage(val, url);
                 }
             }
@@ -140,7 +140,7 @@ namespace GameAid
 
             foreach (var val in _fileList)
             {
-                var url = "http://yourserver.com/uploads/gameaid/" + val;
+                var url = Config.uploads_gameaid + val;
                 AddImage(val, url);
             }
         }
@@ -160,7 +160,7 @@ namespace GameAid
                 if (!b.dict.TryGetValue(key, out val))
                     continue;
 
-                var url = "http://yourserver.com/uploads/Mapping/" + val;
+                var url = Config.uploads_mapping + val;
                 AddImage(val, url);
             }
         }

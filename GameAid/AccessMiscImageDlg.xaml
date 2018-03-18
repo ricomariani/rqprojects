@@ -27,7 +27,7 @@
         <DockPanel DockPanel.Dock="Top" Height="25">
             <Button DockPanel.Dock="Right" Width="50" Click="Fetch_Click">Fetch</Button>
             <TextBlock DockPanel.Dock="Left" Padding="5,0,5,0" VerticalAlignment="Center">Url:</TextBlock>
-            <TextBox Name="m_search" Height="25" VerticalAlignment="Center" KeyDown="m_search_KeyDown">http://yourserver.com/uploads/...</TextBox>
+            <TextBox Name="m_search" Height="25" VerticalAlignment="Center" KeyDown="m_search_KeyDown"></TextBox>
         </DockPanel>
         <DockPanel DockPanel.Dock="Bottom" Height="25">
             <Button Name="m_ok" DockPanel.Dock="Right" Margin="5,0,0,0" Width="50" Click="m_ok_Click">OK</Button>

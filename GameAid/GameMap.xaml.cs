@@ -3234,7 +3234,7 @@ namespace GameAid
 
             Thickness margin = new Thickness(pLocal.X, pLocal.Y, 0, 0);
 
-            var text = "http://yourserver.com/uploads/Mapping/" + textBase;
+            var text = Config.uploads_mapping + textBase;
 
             BeginUndoUnit();
             imageText = text;
@@ -3317,7 +3317,7 @@ namespace GameAid
 
             Thickness margin = new Thickness(pLocal.X, pLocal.Y, 0, 0);
 
-            string text = "http://yourserver.com/uploads/gameaid/" + textBase;
+            string text = Config.uploads_gameaid + textBase;
 
             BeginUndoUnit();
             imageText = text;

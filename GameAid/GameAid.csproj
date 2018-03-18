@@ -129,6 +129,7 @@
     <Compile Include="CheatSheet.xaml.cs">
       <DependentUpon>CheatSheet.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Config.cs" />
     <Compile Include="LineToPath.cs" />
     <Compile Include="GameMapHelpers.cs" />
     <Compile Include="ManyKey.xaml.cs">

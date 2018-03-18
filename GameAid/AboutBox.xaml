@@ -2,7 +2,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:l="clr-namespace:GameAid"
-    Title="About GameAid" Height="480" Width="600" Icon="http://yourserver.com/uploads/youricon.jpg">
+    Title="About GameAid" Height="480" Width="600">
   <!--
       Copyright (c) 2007-2018 Rico Mariani
       

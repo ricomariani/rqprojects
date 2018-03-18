@@ -44,6 +44,7 @@ namespace GameAid
         {
             InitializeComponent();
             this.m_search.Focus();
+            this.m_search.Text = Config.uploads + "...";
         }
 
         MainWindow Main { get { return MainWindow.mainWindow; } }

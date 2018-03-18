@@ -93,7 +93,7 @@ namespace GameAid
            
             Thickness margin = new Thickness(0, 0, 0, 0);
 
-            var text = "http://yourserver.com/uploads/Mapping/" + textBase;
+            var text = Config.uploads_mapping + textBase;
 
             ImageName = text;
             Image img = GameMap.CreateImageObject(text, ref margin, 18, text);
