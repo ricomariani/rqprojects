@@ -62,10 +62,14 @@ namespace GameHost
             // Create a listener.
             listener = new HttpListener();
 
-            // Add the prefixes.
+            // These prefixes allow the bot to run in the debugger not elevated listening locally with no privs
+            // uncomment this stuff and comment out the others if you are doing local repro work not on the deployment.
+            //
             // listener.Prefixes.Add("http://localhost:8080/sheet/");
             // listener.Prefixes.Add("http://localhost:8080/calendar/");
 
+
+            // these will require that the bot run elevated, if they fail, elevate
             listener.Prefixes.Add("http://*:80/sheet/");
             listener.Prefixes.Add("http://*:80/calendar/");
             listener.Prefixes.Add("http://*:80/todos/");
